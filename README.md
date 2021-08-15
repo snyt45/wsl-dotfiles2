@@ -17,30 +17,80 @@ WSL2のLinuxディストリビューション(Ubuntu 20.04)上に私の最適な
 - Git Credential Manager Core(Gitの認証情報ヘルパーとして使う)
   - [インストール手順](https://github.com/microsoft/Git-Credential-Manager-Core#windows)
 
+## WSLにUbuntuをインポートする
+
+### 1. Linuxディストリビューションのtarファイルをコンテナから取得する
+WSLにインポートするためのLinuxディストリビューションのtarファイルを用意する必要があります。
+
+既にtarファイルがある場合は、「2. 取得したtarファイルをWSLにインポートする」から進めて下さい。
+
+[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#1-linux%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%AA%E3%83%93%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AEtar%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%8B%E3%82%89%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+
+### 2. 取得したtarファイルをWSLにインポートする
+tarファイルをインポートします。
+
+```
+wsl --import <DistroName> C:\Users\<HomeDirName>\AppData\Local\Packages\<DistroName> C:\temp\ubuntu.tar
+```
+
+[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#2-%E5%8F%96%E5%BE%97%E3%81%97%E3%81%9Ftar%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92wsl%E3%81%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B)
+
 ## Ubuntu セットアップ
-### 1. WSL上にUbuntuをインポートする
 
-[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#%E6%96%B0%E3%81%97%E3%81%8Flinux%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%AA%E3%83%93%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%E3%82%92%E8%A6%9A%E3%81%88%E3%81%9F)
+### 1. アップデート
 
-### 2. Ubuntuのユーザー作成、Windows Terminalの開始ディレクトリ設定、dockerコマンドを使えるようにする
+この後、vimとsudoコマンドが必要になるためインストールしています。
 
-[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#ubuntu%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E4%BD%9C%E6%88%90windows-terminal%E3%81%AE%E9%96%8B%E5%A7%8B%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E8%A8%AD%E5%AE%9Adocker%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%92%E4%BD%BF%E3%81%88%E3%82%8B%E3%81%AB%E3%81%99%E3%82%8B)
+```
+apt update
+apt upgrade
+apt install vim
+apt install sudo
+```
 
-### 3. sudoコマンドインストール、追加したユーザーをsudoグループに追加
+### 2. ユーザーを作成
 
-[手順](https://snyt45.com/posts/20210813/wsl2-import-linux-distro-sudo/)
+```
+adduser <UserName>
+```
 
-### 4. Windows Terminalのタブ名とタブ色を変える
+### 3. 追加したユーザーをsudoグループに追加
 
-作業しているLinuxディストリビューションを間違えないようにWindows Terminalのタブ名とタブ色を変えます。
+```
+usermod -G sudo <UserName>
+```
 
-[手順](https://snyt45.com/posts/20210809/windows-terminal-change-color/)
+### 4. ログイン時のデフォルトユーザーを設定
+
+**設定を反映するには、一度wslを再起動(wsl -t <DistroName>)する必要があります。**
+
+```
+vi /etc/wsl.conf
+
+# 下記を追加
+[user]
+default=<UserName>
+```
 
 ### 5. ミニマム化されたUbuntuを標準のUbuntuに戻す
 
 ```
 sudo unminimize
 ```
+
+## Docker セットアップ
+
+### 1. Dockerの設定からWSLインテグレーションを有効にする。
+
+dockerコマンドを使えるようにします。
+
+## Windows Terminal セットアップ
+
+### 1. Windows Terminalの設定を行います。
+
+- 開始ディレクトリ設定
+- タブ名とタブ色を変える
+- フォント変更
 
 ## dotfiles セットアップ
 ```
