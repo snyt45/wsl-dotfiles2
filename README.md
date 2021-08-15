@@ -39,13 +39,14 @@ wsl --import <DistroName> C:\Users\<HomeDirName>\AppData\Local\Packages\<DistroN
 
 ### 1. アップデート
 
-この後、vimとsudoコマンドが必要になるためインストールしています。
+この後、vimとsudoコマンドとgitが必要になるためインストールしています。
 
 ```
 apt update
 apt upgrade
 apt install vim
 apt install sudo
+apt install git
 ```
 
 ### 2. ユーザーを作成
