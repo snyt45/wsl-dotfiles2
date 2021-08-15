@@ -88,9 +88,22 @@ dockerコマンドを使えるようにします。
 
 ### 1. Windows Terminalの設定を行います。
 
-- 開始ディレクトリ設定
-- タブ名とタブ色を変える
-- フォント変更
+```
+{
+    "background": "#300030",  // 背景色を変更
+    "bellStyle": "none",  // ベル通知OFF
+    "fontFace": "Fira Code", // フォントをFira Code指定
+    "fontSize": 11, // フォントサイズ変更
+    "guid": "{7dd682f4-0485-5308-9489-8941b3c7641c}",
+    "hidden": false,
+    "name": "dev_snyt45",
+    "source": "Windows.Terminal.Wsl",
+    "startingDirectory": "//wsl$/dev_snyt45/home/snyt45", // 開始ディレクトリをLinuxのホームディレクトリに指定
+    "suppressApplicationTitle": true, // タブ名を反映させるために必要
+    "tabColor": "#300030",  // タブ色変更
+    "tabTitle": "dev"  // タブ名変更
+}
+```
 
 ## dotfiles セットアップ
 ```
