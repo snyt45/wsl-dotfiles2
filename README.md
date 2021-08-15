@@ -99,5 +99,9 @@ cd ~/.dotfiles
 ```
 
 ## Ubuntu リセット
+  
+```
+wsl --unregister <DistributionName>
+```
 
 [手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%97%E3%81%9Flinux%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%AA%E3%83%93%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%99%BB%E9%8C%B2%E8%A7%A3%E9%99%A4)
