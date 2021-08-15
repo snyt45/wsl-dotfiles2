@@ -110,6 +110,9 @@ dockerコマンドを使えるようにします。
 ```
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
+  
+sh install.sh linuxbrew
+sh install.sh git
 ```
 
 ## Ubuntu リセット
