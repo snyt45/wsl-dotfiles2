@@ -34,6 +34,12 @@ WSL2のLinuxディストリビューション(Ubuntu 20.04)上に私の最適な
 
 [手順](https://snyt45.com/posts/20210809/windows-terminal-change-color/)
 
+### 5. ミニマム化されたUbuntuを標準のUbuntuに戻す
+
+```
+sudo unminimize
+```
+
 ## dotfiles セットアップ
 ```
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
