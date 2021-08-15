@@ -97,9 +97,9 @@ dockerコマンドを使えるようにします。
     "fontSize": 11, // フォントサイズ変更
     "guid": "{7dd682f4-0485-5308-9489-8941b3c7641c}",
     "hidden": false,
-    "name": "dev_snyt45",
+    "name": "<DistroName>",
     "source": "Windows.Terminal.Wsl",
-    "startingDirectory": "//wsl$/dev_snyt45/home/snyt45", // 開始ディレクトリをLinuxのホームディレクトリに指定
+    "startingDirectory": "//wsl$/<DistroName>/home/<HomeDirName>", // 開始ディレクトリをLinuxのホームディレクトリに指定
     "suppressApplicationTitle": true, // タブ名を反映させるために必要
     "tabColor": "#300030",  // タブ色変更
     "tabTitle": "dev"  // タブ名変更
