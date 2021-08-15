@@ -47,18 +47,17 @@ setup_linuxbrew() {
 
     # brewコマンドが存在しない場合
     if test ! "$(which brew)"; then
-        info "依存関係をインストール(Debian or Ubuntu)"
         sudo apt-get install build-essential procps curl file git
+        success "依存関係をインストール(Debian or Ubuntu)しました。"
 
-        info "linuxbrewをインストール"
         curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+        success "linuxbrewをインストールしました。"
 
-        info "linuxbrewのパスを通す"
         test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
         test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
         test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
         echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-    # brewコマンドが存在する場合
+        success "linuxbrewのパスを通しました。"
     else
         info "linuxbrewは既にインストール済みです。"
     fi
@@ -73,24 +72,28 @@ setup_git() {
     defaultName=$(git config user.name)
     defaultEmail=$(git config user.email)
 
+    info "Gitでユーザー名とメールアドレスを設定します。"
     read -rp "Name [$defaultName] " name
     read -rp "Email [$defaultEmail] " email
 
-    # Gitでユーザー名とメールアドレスを設定する
     git config --global user.name "${name:-$defaultName}"
     git config --global user.email "${email:-$defaultEmail}"
+    success "Gitでユーザー名とメールアドレスを設定しました。"
 
-    # Gitで認証情報ヘルパーにGit Credential Manager Coreを使う(Windowsにインストールが必要)
-    # https://github.com/microsoft/Git-Credential-Manager-Core#windows
     homeDirName="snyt45"
 
+    info "Gitで認証情報ヘルパーを設定します。"
     read -rp "homeDirName [$homeDirName] " homedirname
     
+    # ディレクトリチェック用
     gitCredentialManagerCoreExe="/mnt/c/Users/${homedirname}/AppData/Local/Programs/Git Credential Manager Core/git-credential-manager-core.exe"
+    # Git設定用
+    gitCredentialManagerCoreExeConfig="/mnt/c/Users/${homedirname}/AppData/Local/Programs/Git\\ Credential\\ Manager\\ Core/git-credential-manager-core.exe"
 
-    # WindowsにGit Credential Manager Coreがインストールされている場合
+    # git-credential-manager-core.exeが存在する場合
     if test -e "${gitCredentialManagerCoreExe}"; then
-        git config --global credential.helper "${gitCredentialManagerCoreExe}"
+        git config --global credential.helper "${gitCredentialManagerCoreExeConfig}"
+        success "Gitで認証情報ヘルパーを設定しました。"
     else
         info "WindowsにGit Credential Manager Coreをインストールして下さい。"
     fi
