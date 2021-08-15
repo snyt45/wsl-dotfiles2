@@ -25,4 +25,10 @@ WSL2のLinuxディストリビューション(Ubuntu 20.04)上に私の最適な
 
 [手順](https://snyt45.com/posts/20210813/wsl2-import-linux-distro-sudo/)
 
+### 4. Windows Terminalのタブ名とタブ色を変える
+
+作業しているLinuxディストリビューションを間違えないようにWindows Terminalのタブ名とタブ色を変えます。
+
+[手順](https://snyt45.com/posts/20210809/windows-terminal-change-color/)
+
 ## dotfiles セットアップ
