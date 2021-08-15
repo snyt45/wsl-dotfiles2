@@ -50,7 +50,7 @@ setup_linuxbrew() {
         sudo apt-get install build-essential procps curl file git
         success "依存関係をインストール(Debian or Ubuntu)しました。"
 
-        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash --login
         success "linuxbrewをインストールしました。"
 
         test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
@@ -58,14 +58,14 @@ setup_linuxbrew() {
         test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
         echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
         success "linuxbrewのパスを通しました。"
+        warning "brew doctorを実行してlinuxbrewに問題がないことを確認してください。"
     else
         info "linuxbrewは既にインストール済みです。"
     fi
 }
 
 # Gitのセットアップ
-# dependency: setup_linuxbrew実行後
-# note: 
+# note: setup_linuxbrew実行後
 setup_git() {
     title "Setup Git"
 
