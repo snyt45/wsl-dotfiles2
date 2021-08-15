@@ -11,6 +11,9 @@ WSL2のLinuxディストリビューション(Ubuntu 20.04)上に私の最適な
 - Docker Desktop
 - Windows Terminal
 - Ubuntu 20.04(Microsoft Store経由)
+- FiraCode(フォント)
+  - [インストール手順](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L100)
+  - [Windows Terminalでフォント指定](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L183)
 
 ## Ubuntu セットアップ
 ### 1. WSL上にUbuntuをインポートする
