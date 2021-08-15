@@ -53,15 +53,20 @@ setup_linuxbrew() {
         curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash --login
         success "linuxbrewをインストールしました。"
 
-        test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-        test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-        test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-        echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+        test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+        test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.bash_profile
+        test -r ~/.profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.profile
         # 設定ファイルを反映
         test -r ~/.bash_profile && . ~/.bash_profile
         test -r ~/.profile && . ~/.profile
-        success "linuxbrewのパスを通しました。"
-        warning "brew doctorを実行してlinuxbrewに問題がないことを確認してください。"
+
+        if test "$(which brew)"; then
+            success "linuxbrewのパスを通しました。"
+            warning "brew doctorを実行してlinuxbrewに問題がないことを確認してください。"
+        else
+            error "linuxbrewのパスが通っていません。ターミナルを再起動してください。"
+        fi
     else
         info "linuxbrewは既にインストール済みです。"
     fi
