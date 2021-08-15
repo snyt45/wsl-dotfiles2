@@ -19,12 +19,12 @@ title() {
 }
 
 error() {
-    echo -e "${RED}Error: ${NONE}$1"
+    echo "${RED}Error: ${NONE}$1"
     exit 1
 }
 
 warning() {
-    echo -e "$YELLOW}Warning: ${NONE}$1"
+    echo "${YELLOW}Warning: ${NONE}$1"
 }
 
 info() {
@@ -57,6 +57,9 @@ setup_linuxbrew() {
         test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
         test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
         echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+        # 設定ファイルを反映
+        test -r ~/.bash_profile && . ~/.bash_profile
+        test -r ~/.profile && . ~/.profile
         success "linuxbrewのパスを通しました。"
         warning "brew doctorを実行してlinuxbrewに問題がないことを確認してください。"
     else
