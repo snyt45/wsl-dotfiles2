@@ -5,13 +5,16 @@
 #==============================
 
 # カラーパレット
-readonly GRAY="\033[1;38;5;243m"
-readonly BLUE="\033[1;34m"
-readonly GREEN="\033[1;32m"
-readonly RED="\033[1;31m"
-readonly PURPLE="\033[1;35m"
-readonly YELLOW="\033[1;33m"
-readonly NONE="\033[0m"
+# 変数がセットされていない場合に実行
+if test -z "$GRAY"; then
+  readonly GRAY="\033[1;38;5;243m"
+  readonly BLUE="\033[1;34m"
+  readonly GREEN="\033[1;32m"
+  readonly RED="\033[1;31m"
+  readonly PURPLE="\033[1;35m"
+  readonly YELLOW="\033[1;33m"
+  readonly NONE="\033[0m"
+fi
 
 title() {
     echo -e "${PURPLE}$1${NONE}"
@@ -39,7 +42,10 @@ success() {
 # セットアップ
 #==============================
 
-readonly DOTPATH=~/.dotfiles
+# 変数がセットされていない場合に実行
+if test -z "$DOTPATH"; then
+  readonly DOTPATH=~/.dotfiles
+fi
 
 # linuxbrewのインストール
 # note: 依存関係のインストール
