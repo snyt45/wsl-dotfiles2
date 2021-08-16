@@ -42,11 +42,6 @@ success() {
 # セットアップ
 #==============================
 
-# 変数がセットされていない場合に実行
-if test -z "$DOTPATH"; then
-  readonly DOTPATH=~/.dotfiles
-fi
-
 # linuxbrewのインストール
 # note: 依存関係のインストール
 # note: linuxbrewのインストール
