@@ -42,6 +42,9 @@ success() {
 readonly DOTPATH=~/.dotfiles
 
 # linuxbrewのインストール
+# note: 依存関係のインストール
+# note: linuxbrewのインストール
+# note: パスを通す
 setup_linuxbrew() {
     title "Setup linuxbrew"
 
@@ -73,6 +76,8 @@ setup_linuxbrew() {
 }
 
 # Gitのセットアップ
+# note: ユーザー名とメールアドレスの設定
+# note: 認証情報ヘルパーを設定
 setup_git() {
     title "Setup Git"
 
