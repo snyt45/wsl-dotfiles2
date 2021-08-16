@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #==============================
 # メッセージ
@@ -14,25 +14,25 @@ readonly YELLOW="\033[1;33m"
 readonly NONE="\033[0m"
 
 title() {
-    echo "${PURPLE}$1${NONE}"
-    echo "${GRAY}==============================${NONE}"
+    echo -e "${PURPLE}$1${NONE}"
+    echo -e "${GRAY}==============================${NONE}"
 }
 
 error() {
-    echo "${RED}Error: ${NONE}$1"
+    echo -e "${RED}Error: ${NONE}$1"
     exit 1
 }
 
 warning() {
-    echo "${YELLOW}Warning: ${NONE}$1"
+    echo -e "${YELLOW}Warning: ${NONE}$1"
 }
 
 info() {
-    echo "${BLUE}Info: ${NONE}$1"
+    echo -e "${BLUE}Info: ${NONE}$1"
 }
 
 success() {
-    echo "${GREEN}$1${NONE}"
+    echo -e "${GREEN}$1${NONE}"
 }
 
 #==============================
