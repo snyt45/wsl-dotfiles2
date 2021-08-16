@@ -73,7 +73,6 @@ setup_linuxbrew() {
 }
 
 # Gitのセットアップ
-# note: setup_linuxbrew実行後
 setup_git() {
     title "Setup Git"
 
@@ -84,19 +83,19 @@ setup_git() {
     read -rp "Name [$defaultName] " name
     read -rp "Email [$defaultEmail] " email
 
-    git config --global user.name "${name:-$defaultName}"
-    git config --global user.email "${email:-$defaultEmail}"
+    git config --global user.name "${name:=$defaultName}"
+    git config --global user.email "${email:=$defaultEmail}"
     success "Gitでユーザー名とメールアドレスを設定しました。"
 
-    homeDirName="snyt45"
+    defaultHomeDirName=$(whoami)
 
     info "Gitで認証情報ヘルパーを設定します。"
-    read -rp "homeDirName [$homeDirName] " homedirname
+    read -rp "homeDirName [$defaultHomeDirName] " homeDirName
     
     # ディレクトリチェック用
-    gitCredentialManagerCoreExe="/mnt/c/Users/${homedirname}/AppData/Local/Programs/Git Credential Manager Core/git-credential-manager-core.exe"
+    gitCredentialManagerCoreExe="/mnt/c/Users/${homeDirName:=$defaultHomeDirName}/AppData/Local/Programs/Git Credential Manager Core/git-credential-manager-core.exe"
     # Git設定用
-    gitCredentialManagerCoreExeConfig="/mnt/c/Users/${homedirname}/AppData/Local/Programs/Git\\ Credential\\ Manager\\ Core/git-credential-manager-core.exe"
+    gitCredentialManagerCoreExeConfig="/mnt/c/Users/${homeDirName:=$defaultHomeDirName}/AppData/Local/Programs/Git\\ Credential\\ Manager\\ Core/git-credential-manager-core.exe"
 
     # git-credential-manager-core.exeが存在する場合
     if test -e "${gitCredentialManagerCoreExe}"; then
