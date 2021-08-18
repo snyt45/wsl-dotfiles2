@@ -20,7 +20,7 @@ snyt45のdotfilesです。
 
 ## WSLにUbuntuをインポートする
 
-セットアップされたUbuntuのイメージを取得。
+セットアップされたUbuntuのイメージを取得([Dockerfile](https://github.com/snyt45/ubuntu-unminimize))。
 ```
 docker pull snyt45/ubuntu-unminimize
 ```
