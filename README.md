@@ -27,7 +27,7 @@ docker pull snyt45/ubuntu-unminimize
 
 コンテナ起動。
 ```
-docker run --rm -t snyt45/ubuntu-unminimize bash ls
+docker run -t snyt45/ubuntu-unminimize bash ls
 ```
 
 コンテナID取得。
