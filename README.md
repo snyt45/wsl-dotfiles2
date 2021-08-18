@@ -1,93 +1,59 @@
 # wsl-dotfiles2
-## 概要
-WSL2のLinuxディストリビューション(Ubuntu 20.04)上に私の最適な開発環境を構築するためのdotfilesです。
+snyt45のdotfilesです。
 
-## インストールの前提条件
+## 前提条件
 
-[こちら](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/)の記事をもとにWindows10+WSL2+Dockerの環境を用意しておく必要があります。
+このリポジトリはWSL2上のUbuntu(tarファイルをWSLにインポート)で実行され、以下に依存します。
+
+[こちら](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/)の記事をもとにWindows10+WSL2+Dockerの環境を用意します。
 
 - Windows10 Home(Pro)
 - WSL2
 - Docker Desktop
 - Windows Terminal
 - Ubuntu 20.04(Microsoft Store経由)
-- FiraCode(フォント)
+- FiraCode(フォント) ※任意
   - [インストール手順](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L100)
   - [Windows Terminalでフォント指定](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L183)
-- Git Credential Manager Core(Gitの認証情報ヘルパーとして使う)
+- Git Credential Manager Core(Gitの認証情報ヘルパーとして使う) ※任意
   - [インストール手順](https://github.com/microsoft/Git-Credential-Manager-Core#windows)
 
 ## WSLにUbuntuをインポートする
 
-### 1. Linuxディストリビューションのtarファイルをコンテナから取得する
-WSLにインポートするためのLinuxディストリビューションのtarファイルを用意する必要があります。
-
-既にtarファイルがある場合は、「2. 取得したtarファイルをWSLにインポートする」から進めて下さい。
-
-[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#1-linux%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%AA%E3%83%93%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AEtar%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%8B%E3%82%89%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
-
-### 2. 取得したtarファイルをWSLにインポートする
-tarファイルをインポートします。
-
+セットアップされたUbuntuのイメージを取得。
 ```
-wsl --import <DistroName> C:\Users\<HomeDirName>\AppData\Local\Packages\<DistroName> C:\temp\ubuntu.tar
+docker pull snyt45/ubuntu-unminimize
 ```
 
-[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#2-%E5%8F%96%E5%BE%97%E3%81%97%E3%81%9Ftar%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92wsl%E3%81%AB%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%99%E3%82%8B)
-
-## Ubuntu セットアップ
-
-### 1. アップデート
-
-この後、vimとsudoコマンドとgitが必要になるためインストールしています。
-
+コンテナ起動。
 ```
-apt update
-apt upgrade
-apt install vim
-apt install sudo
-apt install git
+docker run --rm -t snyt45/ubuntu-unminimize bash ls
 ```
 
-### 2. ユーザーを作成
-
+コンテナID取得。
 ```
-adduser <UserName>
-```
-
-### 3. 追加したユーザーをsudoグループに追加
-
-```
-usermod -G sudo <UserName>
+# bash
+dockerContainerID=$(docker container ls -a | grep -i snyt45/ubuntu-unminimize | awk '{print $1}')
+# fish
+set dockerContainerID (docker container ls -a | grep -i snyt45/ubuntu-unminimize | awk '{print $1}')
 ```
 
-### 4. ログイン時のデフォルトユーザーを設定
-
-**設定を反映するには、一度wslを再起動(wsl -t <DistroName>)する必要があります。**
-
+tarファイルをエクスポート。
 ```
-vi /etc/wsl.conf
-
-# 下記を追加
-[user]
-default=<UserName>
+docker export $dockerContainerID > /mnt/c/temp/ubuntu-unminimize.tar
 ```
 
-### 5. ミニマム化されたUbuntuを標準のUbuntuに戻す
-
+WSLにインポート。
 ```
-sudo unminimize
+cd C:\temp
+wsl --import dev C:\Users\snyt45\AppData\Local\Packages\dev C:\temp\ubuntu-unminimize.tar
 ```
 
 ## Docker セットアップ
 
-### 1. Dockerの設定からWSLインテグレーションを有効にする。
-
-dockerコマンドを使えるようにします。
+dockerコマンドを使えるようにするため、Dockerの設定 > WSLインテグレーションにて追加したLinuxディストリビューションを有効にする。
 
 ## Windows Terminal セットアップ
-
-### 1. Windows Terminalの設定を行います。
 
 ```
 {
@@ -116,9 +82,7 @@ cd ~/.dotfiles
 ```
 
 ## Ubuntu リセット
-  
+
 ```
 wsl --unregister <DistributionName>
 ```
-
-[手順](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/#%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%81%97%E3%81%9Flinux%E3%83%87%E3%82%A3%E3%82%B9%E3%83%88%E3%83%AA%E3%83%93%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E7%99%BB%E9%8C%B2%E8%A7%A3%E9%99%A4)
