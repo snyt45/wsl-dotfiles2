@@ -3,7 +3,7 @@ snyt45のdotfilesです。
 
 ## 前提条件
 
-このリポジトリはWSL2上のUbuntu(tarファイルをWSLにインポート)で実行され、以下に依存します。
+このリポジトリはWSL2上のUbuntuで実行され、以下に依存します。
 
 [こちら](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/)の記事をもとにWindows10+WSL2+Dockerの環境を用意します。
 
@@ -18,19 +18,42 @@ snyt45のdotfilesです。
 - Git Credential Manager Core(Gitの認証情報ヘルパーとして使う) ※任意
   - [インストール手順](https://github.com/microsoft/Git-Credential-Manager-Core#windows)
 
-## WSLにUbuntuをインポートする
+## セットアップ
+###  1. WSLにUbuntuをインポート
 
-WSLにインポート。
+1. WSLディストリビューションにwsl-dotfiles2を`~/.dotfiles`にクローンします。
+```
+git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
+```
+
+2. セットアップされたUbuntuのdocker iamgeからtarファイルをエクスポートします。
+
+`C:\temp\`に`ubuntu-unminimize.tar`という名前のtarファイルがエクスポートされます。
+
+[セットアップされたUbuntuの詳細はこちら](https://github.com/snyt45/ubuntu-unminimize)
+```
+cd ~/.dotfiles
+sh export_tar.sh
+```
+
+3. PowerShellを開き、tarファイルをWSLにインポートします。
+
+`{distro}`は、ディストリビューションの任意の名前を指定します。
+
+`{username}`は、ユーザー名を指定します。
+
+インポートすると`C:\Users\{username}\AppData\Local\Packages\{distro}`に`実体(ext4.vhdx)`が作成されます。
+
 ```
 cd C:\temp
-wsl --import dev C:\Users\snyt45\AppData\Local\Packages\dev C:\temp\ubuntu-unminimize.tar
+wsl --import {distro} C:\Users\{username}\AppData\Local\Packages\{distro} C:\temp\ubuntu-unminimize.tar
 ```
 
-## Docker セットアップ
+### Docker セットアップ
 
 dockerコマンドを使えるようにするため、Dockerの設定 > WSLインテグレーションにて追加したLinuxディストリビューションを有効にする。
 
-## Windows Terminal セットアップ
+### Windows Terminal セットアップ
 
 ```
 {
@@ -49,17 +72,17 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 }
 ```
 
-## dotfiles セットアップ
+### dotfiles セットアップ
 ```
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
 
-sh export_tar.sh  
 . setup.sh linuxbrew
 . setup.sh git
 ```
 
-## Ubuntu リセット
+## リセット
+### WSL登録解除
 
 ```
 wsl --unregister <DistributionName>
