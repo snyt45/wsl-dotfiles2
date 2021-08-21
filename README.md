@@ -20,31 +20,6 @@ snyt45のdotfilesです。
 
 ## WSLにUbuntuをインポートする
 
-※tarファイルが既にあれば、WSLにインポートのみでOK
-
-セットアップされたUbuntuのイメージを取得([Dockerfile](https://github.com/snyt45/ubuntu-unminimize))。
-```
-docker pull snyt45/ubuntu-unminimize
-```
-
-コンテナ起動。
-```
-docker run -t snyt45/ubuntu-unminimize bash ls
-```
-
-コンテナID取得。
-```
-# bash
-dockerContainerID=$(docker container ls -a | grep -i snyt45/ubuntu-unminimize | awk '{print $1}')
-# fish
-set dockerContainerID (docker container ls -a | grep -i snyt45/ubuntu-unminimize | awk '{print $1}')
-```
-
-tarファイルをエクスポート。
-```
-docker export $dockerContainerID > /mnt/c/temp/ubuntu-unminimize.tar
-```
-
 WSLにインポート。
 ```
 cd C:\temp
@@ -78,7 +53,8 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 ```
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
-  
+
+sh export_tar.sh  
 . setup.sh linuxbrew
 . setup.sh git
 ```
