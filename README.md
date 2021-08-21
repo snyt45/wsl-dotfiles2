@@ -20,6 +20,8 @@ snyt45のdotfilesです。
 
 ## WSLにUbuntuをインポートする
 
+※tarファイルが既にあれば、WSLにインポートのみでOK
+
 セットアップされたUbuntuのイメージを取得([Dockerfile](https://github.com/snyt45/ubuntu-unminimize))。
 ```
 docker pull snyt45/ubuntu-unminimize
