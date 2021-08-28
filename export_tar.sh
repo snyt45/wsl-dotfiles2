@@ -2,6 +2,7 @@
 set -Ceu
 
 readonly IMAGETAG="ubuntu-unminimize"
+# reference: https://github.com/snyt45/ubuntu-unminimize
 readonly DOCKERFILE_PATH="https://raw.githubusercontent.com/snyt45/ubuntu-unminimize/main/Dockerfile"
 readonly USERNAME=$(whoami)
 readonly PASSWORD="password"
