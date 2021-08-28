@@ -1,13 +1,13 @@
-﻿Write-Host "WSLにUbuntuをインポートします。"
-
-# Write-Error時に終了エラーを発生させる。
-$ErrorActionPreference = 'Stop'
-
-Param(
+﻿Param(
   [String]$Arg1,
   [String]$Arg2,
   [String]$Arg3
 )
+
+Write-Host "WSLにUbuntuをインポートします。"
+
+# Write-Error時に終了エラーを発生させる。
+$ErrorActionPreference = 'Stop'
 
 $DistroName = $Arg1
 $InstallLocation = $Arg2
