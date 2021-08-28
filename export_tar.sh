@@ -2,7 +2,7 @@
 set -Ceu
 
 readonly IMAGETAG="ubuntu-unminimize"
-readonly DOCKERFILE_PATH="ubuntu"
+readonly DOCKERFILE_PATH="https://raw.githubusercontent.com/snyt45/ubuntu-unminimize/main/Dockerfile"
 readonly USERNAME=$(whoami)
 readonly PASSWORD="password"
 
@@ -23,7 +23,7 @@ fi
 docker build -t $IMAGETAG \
              --build-arg USER=$USERNAME \
              --build-arg PASS=$PASSWORD \
-             $DOCKERFILE_PATH
+             -f $DOCKERFILE_PATH
 
 # tarファイルをエクスポート
 docker save $IMAGETAG >| /mnt/c/temp/$IMAGETAG.tar
