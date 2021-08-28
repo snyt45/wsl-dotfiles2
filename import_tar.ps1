@@ -1,1 +1,1 @@
-Write-Host "WSLにUbuntuをインポートします。"
+﻿Write-Host "WSLにUbuntuをインポートします。"
