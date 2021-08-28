@@ -1,5 +1,8 @@
 ﻿Write-Host "WSLにUbuntuをインポートします。"
 
+# Write-Error時に終了エラーを発生させる。
+$ErrorActionPreference = 'Stop'
+
 Param(
   [String]$Arg1,
   [String]$Arg2,
@@ -14,16 +17,14 @@ $InstallTarFile = $Arg3
 try {
   Get-Command -Name wsl -ErrorAction Stop > $null
 } catch {
-  Write-Host "wslコマンドが存在しません。"
-  exit 1
+  Write-Error "wslコマンドが存在しません。"
 }
 
 # tarファイルがあるか
 try {
   if (!(Test-Path $InstallTarFile)) { throw }
 } catch {
-  Write-Host "指定されたtarファイルが見つかりません。"
-  exit 1
+  Write-Error "指定されたtarファイルが見つかりません。"
 }
 
 # wsl --import <DistroName> <InstallLocation> <InstallTarFile>
