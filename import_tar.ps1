@@ -12,7 +12,7 @@ $InstallTarFile = $Arg3
 
 # wslコマンドが存在するか
 try {
-  Get-Command -Name wsl -ErrorAction Stop
+  Get-Command -Name wsl -ErrorAction Stop > $null
 } catch {
   Write-Host "wslコマンドが存在しません。"
   exit 1
