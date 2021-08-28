@@ -1,4 +1,0 @@
-[submodule "ubuntu"]
-	path = ubuntu
-	url = https://github.com/snyt45/ubuntu-unminimize.git
-  branch = main
