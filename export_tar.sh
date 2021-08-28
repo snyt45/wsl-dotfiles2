@@ -31,7 +31,7 @@ docker build -t $IMAGETAG \
 docker run -dit $IMAGETAG
 
 # コンテナIDを取得
-dockerContainerID=$(docker container ls -a | grep -i $IMAGETAG | awk '{print $1}')
+dockerContainerID=$(docker ps | grep -i $IMAGETAG | awk '{print $1}')
 
 # tarファイルをエクスポート
 docker export $dockerContainerID >| /mnt/c/temp/$IMAGETAG.tar
