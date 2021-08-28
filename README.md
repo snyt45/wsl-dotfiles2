@@ -21,22 +21,17 @@ snyt45のdotfilesです。
 ## セットアップ
 ###  1. WSLにUbuntuをインポート
 
-#### 1-1. WSLで作業します。セットアップ用のリポジトリをクローンします。
-```
-git clone --recursive https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
-```
-
-#### 1-2. tarファイルをエクスポートします。
+#### 1-1. tarファイルをエクスポートします。
 
 `C:\temp\`に`ubuntu-unminimize.tar`という名前のtarファイルがエクスポートされます。
 
 [ベースになるUbuntuのDockerfileはこちら](https://github.com/snyt45/ubuntu-unminimize)
 ```
-cd ~/.dotfiles
-sh export_tar.sh
+※curlコマンドが必要
+curl  https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/export_tar.sh | sh
 ```
 
-#### 1-3. PowerShellを開き、tarファイルをWSLにインポートします。
+#### 1-2. PowerShellを開き、tarファイルをWSLにインポートします。
 
 ```
 $script = (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/import_tar.ps1')
