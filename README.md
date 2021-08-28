@@ -23,7 +23,7 @@ snyt45のdotfilesです。
 
 #### 1-1. WSLで作業します。セットアップ用のリポジトリをクローンします。
 ```
-git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
+git clone --recursive https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 ```
 
 #### 1-2. tarファイルをエクスポートします。
