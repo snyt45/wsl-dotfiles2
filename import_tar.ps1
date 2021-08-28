@@ -13,6 +13,11 @@ $DistroName = $Arg1
 $InstallLocation = $Arg2
 $InstallTarFile = $Arg3
 
+# TODO: デバッグ用。不要になったら削除する
+Write-Host "DistroName=${DistroName}"
+Write-Host "InstallLocation=${InstallLocation}"
+Write-Host "InstallTarFile=${InstallTarFile}"
+
 # wslコマンドが存在するか
 try {
   Get-Command -Name wsl -ErrorAction Stop > $null
