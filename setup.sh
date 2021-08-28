@@ -106,6 +106,9 @@ setup_git() {
     # git-credential-manager-core.exeが存在する場合
     if test -e "${gitCredentialManagerCoreExe}"; then
         git config --global credential.helper "${gitCredentialManagerCoreExeConfig}"
+        # リポジトリ毎に認証を求めらるようになるため、結果リポジトリ毎に対応したアカウントで認証できるようになる。
+        # reference: https://github.com/Microsoft/Git-Credential-Manager-for-Windows/blob/master/Docs/Configuration.md#usehttppath
+        git config --global credential.useHttpPath true
         success "Gitで認証情報ヘルパーを設定しました。"
     else
         info "WindowsにGit Credential Manager Coreをインストールして下さい。"
