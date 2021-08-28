@@ -21,7 +21,7 @@ snyt45のdotfilesです。
 ## セットアップ
 ###  1. WSLにUbuntuをインポート
 
-#### 1-1. tarファイルをエクスポートします。
+#### 1-1. WSLで作業します。tarファイルをエクスポートします。
 
 `C:\temp\`に`ubuntu-unminimize.tar`という名前のtarファイルがエクスポートされます。
 
