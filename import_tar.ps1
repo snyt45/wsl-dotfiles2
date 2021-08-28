@@ -1,6 +1,9 @@
 ﻿Param(
+  [Parameter(Mandatory=$true)]
   [String]$Arg1,
+  [Parameter(Mandatory=$true)]
   [String]$Arg2,
+  [Parameter(Mandatory=$true)]
   [String]$Arg3
 )
 
