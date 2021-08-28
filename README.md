@@ -40,6 +40,10 @@ sh export_tar.sh
 
 ```
 $script = (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/import_tar.ps1')
+
+# -DistroName: ディストリビューション名(必須)
+# -InstallLocation: インストール先(必須)
+# -InstallTarFile: インポートするtarファイルの場所(必須)
 Invoke-Expression("&{$script} -DistroName 'dev' -InstallLocation 'C:\Users\snyt45\AppData\Local\Packages\dev' -InstallTarFile 'C:\temp\ubuntu-unminimize.tar'")
 ```
 
