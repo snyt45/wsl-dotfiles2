@@ -26,7 +26,17 @@ docker build -t $IMAGETAG \
              --build-arg PASS=$PASSWORD \
              -file $DOCKERFILE_PATH
 
+
+# コンテナをバックグラウンドで起動しっぱなしにする
+docker run -dit $IMAGETAG
+
+# コンテナIDを取得
+dockerContainerID=$(docker container ls -a | grep -i $IMAGETAG | awk '{print $1}')
+
 # tarファイルをエクスポート
-docker save $IMAGETAG >| /mnt/c/temp/$IMAGETAG.tar
+docker export $dockerContainerID >| /mnt/c/temp/$IMAGETAG.tar
+
+# この方法だとWSLにインポートしたときに正しくディレクトリが生成されずに0x8007010bエラーを吐くのでコメントアウト
+# docker save $IMAGETAG >| /mnt/c/temp/$IMAGETAG.tar
 
 echo "Done."
