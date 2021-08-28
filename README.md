@@ -30,7 +30,7 @@ git clone --recursive https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 
 `C:\temp\`に`ubuntu-unminimize.tar`という名前のtarファイルがエクスポートされます。
 
-[UbuntuのDockerfileはこちら](https://github.com/snyt45/ubuntu-unminimize)
+[ベースになるUbuntuのDockerfileはこちら](https://github.com/snyt45/ubuntu-unminimize)
 ```
 cd ~/.dotfiles
 sh export_tar.sh
@@ -38,15 +38,9 @@ sh export_tar.sh
 
 #### 1-3. PowerShellを開き、tarファイルをWSLにインポートします。
 
-`{distro}`は、ディストリビューションの任意の名前を指定します。
-
-`{username}`は、ユーザー名を指定します。
-
-インポートすると`C:\Users\{username}\AppData\Local\Packages\{distro}`に`実体(ext4.vhdx)`が作成されます。
-
 ```
-cd C:\temp
-wsl --import {distro} C:\Users\{username}\AppData\Local\Packages\{distro} C:\temp\ubuntu-unminimize.tar
+$script = (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/import_tar.ps1')
+Invoke-Expression("&{$script} -DistroName 'dev' -InstallLocation 'C:\Users\snyt45\AppData\Local\Packages\dev' -InstallTarFile 'C:\temp\ubuntu-unminimize.tar'")
 ```
 
 ### Docker セットアップ
