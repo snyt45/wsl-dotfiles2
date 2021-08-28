@@ -1,20 +1,16 @@
 ﻿Param(
   [Parameter(Mandatory=$true)]
-  [String]$Arg1,
+  [String]$DistroName,
   [Parameter(Mandatory=$true)]
-  [String]$Arg2,
+  [String]$InstallLocation,
   [Parameter(Mandatory=$true)]
-  [String]$Arg3
+  [String]$InstallTarFile
 )
 
 Write-Host "WSLにUbuntuをインポートします。"
 
 # Write-Error時に終了エラーを発生させる。
 $ErrorActionPreference = 'Stop'
-
-$DistroName = $Arg1
-$InstallLocation = $Arg2
-$InstallTarFile = $Arg3
 
 # TODO: デバッグ用。不要になったら削除する
 Write-Host "DistroName=${DistroName}"
