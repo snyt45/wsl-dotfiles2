@@ -24,7 +24,7 @@ fi
 docker build -t $IMAGETAG \
              --build-arg USER=$USERNAME \
              --build-arg PASS=$PASSWORD \
-             -f $DOCKERFILE_PATH
+             -file $DOCKERFILE_PATH
 
 # tarファイルをエクスポート
 docker save $IMAGETAG >| /mnt/c/temp/$IMAGETAG.tar
