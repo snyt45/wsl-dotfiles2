@@ -32,7 +32,7 @@ cd /mnt/c
 mkdir temp
 
 # curlコマンドが必要
-curl  https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/export_tar.sh | sh
+curl https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/export_tar.sh | sh
 ```
 
 #### 1-2. PowerShellを開き、tarファイルをWSLにインポートします。
