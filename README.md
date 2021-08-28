@@ -46,11 +46,11 @@ $script = (New-Object Net.WebClient).DownloadString('https://raw.githubuserconte
 Invoke-Expression("&{$script} -DistroName 'dev' -InstallLocation 'C:\Users\snyt45\AppData\Local\Packages\dev' -InstallTarFile 'C:\temp\ubuntu-unminimize.tar'")
 ```
 
-### Docker セットアップ
+### 2. Docker セットアップ
 
 dockerコマンドを使えるようにするため、Dockerの設定 > WSLインテグレーションにて追加したLinuxディストリビューションを有効にする。
 
-### Windows Terminal セットアップ
+### 3. Windows Terminal セットアップ
 
 ```
 {
@@ -69,7 +69,7 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 }
 ```
 
-### dotfiles セットアップ
+### 4. dotfiles セットアップ
 ```
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
@@ -82,5 +82,5 @@ cd ~/.dotfiles
 ### WSL登録解除
 
 ```
-wsl --unregister <DistributionName>
+wsl --unregister <DistroName>
 ```
