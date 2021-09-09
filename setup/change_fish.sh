@@ -17,4 +17,6 @@ if test "$FISH_PATH"; then
         chsh -s "$FISH_PATH"
         echo "ログインシェルをfishに変更しました。ターミナルを再起動してください。"
     fi
+else
+    echo "fishをインストールしてください。"
 fi
