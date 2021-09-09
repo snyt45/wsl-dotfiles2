@@ -74,17 +74,20 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
 
-# linuxbrewのインストール
+# linuxbrewのインストール ※カレントシェルで実行
 . setup/linuxbrew.sh
 
 # gitのセットアップ
-. setup/git.sh
+sh setup/git.sh
 
 # dev toolのインストール
 xargs brew install < my_formula.txt
 
 # ログインシェルをfishに変更
-. setup/change_fish.sh
+sh setup/change_fish.sh
+
+# ログインシェルをbashに変更
+sh setup/change_bash.sh
 ```
 
 ## リセット
