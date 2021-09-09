@@ -82,6 +82,9 @@ cd ~/.dotfiles
 
 # dev toolのインストール
 xargs brew install < my_formula.txt
+
+# ログインシェルをfishに変更
+. setup/change_fish.sh
 ```
 
 ## リセット
