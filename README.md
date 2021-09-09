@@ -74,8 +74,14 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
 
+# linuxbrewのインストール
 . setup/linuxbrew.sh
+
+# gitのセットアップ
 . setup/git.sh
+
+# dev toolのインストール
+xargs brew install < my_formula.txt
 ```
 
 ## リセット
@@ -83,4 +89,13 @@ cd ~/.dotfiles
 
 ```
 wsl --unregister <DistroName>
+```
+
+## brew
+
+```
+# 書き出し
+brew leaves > my_formula.txt
+# インストール
+xargs brew install < my_formula.txt
 ```
