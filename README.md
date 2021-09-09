@@ -74,8 +74,8 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
 
-. setup.sh linuxbrew
-. setup.sh git
+. setup/linuxbrew.sh
+. setup/git.sh
 ```
 
 ## リセット
