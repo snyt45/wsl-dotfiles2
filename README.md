@@ -7,16 +7,16 @@ snyt45のdotfilesです。
 
 [こちら](https://snyt45.com/posts/20210806/wsl2-multiple-linux-distribution/)の記事をもとにWindows10+WSL2+Dockerの環境を用意します。
 
-- Windows10 Home(Pro)
-- WSL2
-- Docker Desktop
-- Windows Terminal
-- Ubuntu 20.04(Microsoft Store経由)
-- FiraCode(フォント) ※任意
-  - [インストール手順](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L100)
-  - [Windows Terminalでフォント指定](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L183)
-- Git Credential Manager Core(Gitの認証情報ヘルパーとして使う) ※任意
-  - [インストール手順](https://github.com/microsoft/Git-Credential-Manager-Core#windows)
+- Windows10 Home(or Pro)
+  - Docker Desktop
+  - Windows Terminal
+  - FiraCode(フォント) ※任意
+    - [インストール手順](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L100)
+    - [Windows Terminalでフォント指定](https://github.com/snyt45/windows10-dotfiles/blob/master/setup/manually_settings.txt#L183)
+  - Git Credential Manager Core(Gitの認証情報ヘルパーとして使う) ※任意
+    - [インストール手順](https://github.com/microsoft/Git-Credential-Manager-Core#windows)
+  - WSL2
+    - Ubuntu 20.04(Microsoft Store経由)
 
 ## セットアップ
 ###  1. WSLにUbuntuをインポート
