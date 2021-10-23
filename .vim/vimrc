@@ -1,0 +1,14 @@
+let $VIMHOME = expand('<sfile>:p:h')
+
+" Search Text highlight
+set hlsearch
+" highlight off
+nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
+
+let mapleader = "\<Space>"
+
+" Load Plugin
+source $VIMHOME/vim-plug.vim
+
+colorscheme codedark
+
