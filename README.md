@@ -92,6 +92,12 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vi
 :PlugInstall
+
+# fishのセットアップ
+sh setup/change_fish.sh
+# fisher
+# https://github.com/jorgebucaran/fisher#installation
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 ```
 
 シェルの切り替え
