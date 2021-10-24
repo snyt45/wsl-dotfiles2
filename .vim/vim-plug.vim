@@ -8,6 +8,9 @@ Plug 'lambdalisue/fern.vim'
   Plug 'lambdalisue/fern-git-status.vim'
   Plug 'lambdalisue/fern-hijack.vim'
 
+" Git
+Plug 'APZelos/blamer.nvim'
+
 Plug 'voldikss/vim-floaterm'
 
 Plug 'vim-jp/vimdoc-ja'
