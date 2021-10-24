@@ -80,6 +80,9 @@ cd ~/.dotfiles
 # gitのセットアップ
 sh setup/git.sh
 
+# dev toolのインストール
+xargs brew install < my_formula.txt
+
 # シンボリックリンク配置
 sh setup/symlinks.sh
 
@@ -89,9 +92,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vi
 :PlugInstall
-
-# dev toolのインストール
-xargs brew install < my_formula.txt
 ```
 
 シェルの切り替え
