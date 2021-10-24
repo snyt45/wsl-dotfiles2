@@ -1,8 +1,12 @@
 # this file executes after /conf.d
 
-# Ensure fisherman and plugins are installed
-if not test -f $HOME/.config/fish/functions/fisher.fish
-  echo "==> Fisherman not found.  Installing."
-  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  echo "==> 'fisher update'コマンドを実行してください"
+# ~/bin
+if test -d $HOME/bin
+  set -x PATH $HOME/bin $PATH
 end
+
+# Linuxbrew
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# starship
+eval (starship init fish)
