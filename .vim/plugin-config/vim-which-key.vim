@@ -23,6 +23,12 @@ let g:which_key_map.t = {
       \ 't' : [':FloatermToggle'      , 'toggle'],
       \ }
 
+" g is for git
+let g:which_key_map.g = {
+      \ 'name' : '+git' ,
+      \ 'b' : [':BlamerToggle'      , 'git blame toggle'],
+      \ }
+
 " Hide status line
 augroup vimrc_vim_which_key
   autocmd!
