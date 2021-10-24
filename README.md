@@ -80,9 +80,22 @@ cd ~/.dotfiles
 # gitのセットアップ
 sh setup/git.sh
 
+# シンボリックリンク配置
+sh setup/symlinks.sh
+
+# Vimのセットアップ
+# https://github.com/junegunn/vim-plug#vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vi
+:PlugInstall
+
 # dev toolのインストール
 xargs brew install < my_formula.txt
+```
 
+シェルの切り替え
+```
 # ログインシェルをfishに変更
 sh setup/change_fish.sh
 
