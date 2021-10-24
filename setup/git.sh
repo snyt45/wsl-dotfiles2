@@ -8,6 +8,7 @@ set -Ceu
 readonly DEFAULT_NAME=$(git config user.name)
 readonly DEFAULT_EMAIL=$(git config user.email)
 readonly USER_NAME=$(whoami)
+readonly DEFAULT_DIFF_TOOL="vimdiff"
 
 echo "Gitでユーザー名とメールアドレスを設定します。"
 read -rp "Name [$DEFAULT_NAME] " name
@@ -33,5 +34,12 @@ if test -e "${credential_manager}"; then
 else
     echo "WindowsにGit Credential Manager Coreをインストールして下さい。 https://github.com/microsoft/Git-Credential-Manager-Core"
 fi
+
+echo "Git Diff Tool設定します。"
+read -rp "Diff Tool Name [$DEFAULT_DIFF_TOOL] " diff_tool_name
+
+git config --global diff.tool "${diff_tool_name:=$DEFAULT_DIFF_TOOL}"
+git config --global difftool.prompt false
+echo "Git Diff Tool設定しました。"
 
 echo "Done."
