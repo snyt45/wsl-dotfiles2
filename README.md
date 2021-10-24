@@ -98,6 +98,7 @@ sh setup/change_fish.sh
 # fisher
 # https://github.com/jorgebucaran/fisher#installation
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher update
 ```
 
 シェルの切り替え
