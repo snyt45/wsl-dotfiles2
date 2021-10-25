@@ -9,6 +9,10 @@ let mapleader = "\<Space>"
 
 set encoding=utf-8
 
+" View git diffs with git difftool
+" https://stackoverflow.com/questions/890802/how-do-i-disable-the-press-enter-or-type-command-to-continue-prompt-in-vim
+map <F5> :wa!<CR>:!git difftool %:p<CR><CR>
+
 " Load Plugin
 source $VIMHOME/vim-plug.vim
 
