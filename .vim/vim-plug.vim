@@ -10,6 +10,7 @@ Plug 'lambdalisue/fern.vim'
 
 " Git
 Plug 'APZelos/blamer.nvim'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'voldikss/vim-floaterm'
 
