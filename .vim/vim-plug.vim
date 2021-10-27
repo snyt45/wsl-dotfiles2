@@ -14,8 +14,10 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'voldikss/vim-floaterm'
 
+" Other
 Plug 'vim-jp/vimdoc-ja'
 Plug 'liuchengxu/vim-which-key'
+Plug 'gko/vim-coloresque'
 call plug#end()
 
 " Load Plugin Config
