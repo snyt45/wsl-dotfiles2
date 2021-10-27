@@ -8,6 +8,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 let mapleader = "\<Space>"
 
 set encoding=utf-8
+set number
 
 " View git diffs with git difftool
 " https://stackoverflow.com/questions/890802/how-do-i-disable-the-press-enter-or-type-command-to-continue-prompt-in-vim
