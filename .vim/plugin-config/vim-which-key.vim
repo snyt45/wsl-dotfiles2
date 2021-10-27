@@ -27,6 +27,8 @@ let g:which_key_map.t = {
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
       \ 'b' : [':BlamerToggle'      , 'git blame toggle'],
+      \ 'n' : [':GitGutterNextHunk' , 'git next hunk'],
+      \ 'p' : [':GitGutterPrevHunk' , 'git previous hunk'],
       \ }
 
 " Hide status line
