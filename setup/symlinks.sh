@@ -20,11 +20,11 @@ ln -snfv ~/.dotfiles/.vim/vimrc ~/.vim/
 # ~/.vim/plugin-config
 mkdir -p ~/.vim/plugin-config
 ln -snfv ~/.dotfiles/.vim/plugin-config/blammer.vim ~/.vim/plugin-config/
-ln -snfv ~/.dotfiles/.vim/plugin-config/fern.vim ~/.vim/plugin-config/
 ln -snfv ~/.dotfiles/.vim/plugin-config/fern-preview.vim ~/.vim/plugin-config/
-ln -snfv ~/.dotfiles/.vim/plugin-config/vimdoc-ja.vim ~/.vim/plugin-config/
+ln -snfv ~/.dotfiles/.vim/plugin-config/fern.vim ~/.vim/plugin-config/
 ln -snfv ~/.dotfiles/.vim/plugin-config/vim-floaterm.vim ~/.vim/plugin-config/
 ln -snfv ~/.dotfiles/.vim/plugin-config/vim-which-key.vim ~/.vim/plugin-config/
+ln -snfv ~/.dotfiles/.vim/plugin-config/vimdoc-ja.vim ~/.vim/plugin-config/
 
 ###
 # fish
