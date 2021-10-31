@@ -8,6 +8,9 @@ Plug 'lambdalisue/fern.vim'
   Plug 'lambdalisue/fern-git-status.vim'
   Plug 'lambdalisue/fern-hijack.vim'
 
+" fuzzy finder
+Plug 'junegunn/fzf.vim' " Use fzf installed with linuxbrew
+
 " Git
 Plug 'APZelos/blamer.nvim'
 Plug 'airblade/vim-gitgutter'

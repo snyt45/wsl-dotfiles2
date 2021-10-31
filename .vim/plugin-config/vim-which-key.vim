@@ -31,6 +31,16 @@ let g:which_key_map.g = {
       \ 'p' : [':GitGutterPrevHunk' , 'git previous hunk'],
       \ }
 
+" , is for fzf
+let g:which_key_map[','] = {
+      \ 'name' : '+fzf' ,
+      \ 'b' : [':Buffers' , 'Open buffers'],
+      \ 'p' : [':GFiles'  , 'Git files (git ls-files)'],
+      \ 'P' : [':Files'   , 'Files'],
+      \ 's' : [':RG'      , 'rg search result'],
+      \ 'c' : [':Commits' , 'Git commits'],
+      \ }
+
 " Hide status line
 augroup vimrc_vim_which_key
   autocmd!
