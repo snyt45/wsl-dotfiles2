@@ -129,3 +129,6 @@ brew leaves > my_formula.txt
 # インストール
 xargs brew install < my_formula.txt
 ```
+
+## Inspire
+[Github Actions を使って dotfiles の CI を Ubuntu/macOS 上で実行する \| uu64\.me](https://uu64.me/blog/2020/11/dotfiles)
