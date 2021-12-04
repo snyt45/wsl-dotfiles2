@@ -9,6 +9,7 @@ let mapleader = "\<Space>"
 
 set encoding=utf-8
 set number
+set laststatus=2
 
 " https://qiita.com/Linda_pp/items/9e0c94eb82b18071db34
 if has('vim_starting')

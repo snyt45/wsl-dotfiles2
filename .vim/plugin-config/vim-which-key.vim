@@ -43,10 +43,10 @@ let g:which_key_map[','] = {
       \ }
 
 " Hide status line
-augroup vimrc_vim_which_key
-  autocmd!
-  autocmd FileType which_key set laststatus=0 noshowmode noruler
-augroup END
+" augroup vimrc_vim_which_key
+"   autocmd!
+"   autocmd FileType which_key set laststatus=0 noshowmode noruler
+" augroup END
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
