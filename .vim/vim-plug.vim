@@ -15,9 +15,13 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'voldikss/vim-floaterm'
 
+" Coding
+Plug 'Yggdroot/indentLine'
+
 " Other
 Plug 'vim-jp/vimdoc-ja'
 Plug 'liuchengxu/vim-which-key'
+
 call plug#end()
 
 " Load Plugin Config

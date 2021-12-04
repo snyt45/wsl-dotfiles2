@@ -15,6 +15,9 @@ set wildmenu
 set noswapfile
 set nobackup
 set noundofile
+set tabstop=2
+set smartindent
+set shiftwidth=2
 
 " 行頭、行末の移動
 nnoremap H ^
