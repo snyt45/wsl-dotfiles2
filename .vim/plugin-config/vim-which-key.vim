@@ -9,8 +9,8 @@ vnoremap <silent> <leader> :<C-u>WhichKeyVisual '<Space>'<CR>
 let g:which_key_map = {}
 
 " Single mappings
-let g:which_key_map['-'] = [ '<C-W>s'  , 'split below']
-let g:which_key_map['v'] = [ '<C-W>v'  , 'split right']
+let g:which_key_map['-'] = [ ':new'  , 'split below']
+let g:which_key_map['v'] = [ ':vnew'  , 'split right']
 let g:which_key_map['e'] = [ ':Fern . -drawer -keep -toggle -reveal=%' , 'explorer toggle']
 
 " Not a fan of floating windows for this
