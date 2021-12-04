@@ -1,4 +1,4 @@
-function! s:fern_settings() abort
+function! s:fern_preview_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
   nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
   nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
@@ -7,5 +7,5 @@ endfunction
 
 augroup vimrc_fern_preview_settings
   autocmd!
-  autocmd FileType fern call s:fern_settings()
+  autocmd FileType fern call s:fern_preview_settings()
 augroup END
