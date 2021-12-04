@@ -5,7 +5,7 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
 endfunction
 
-augroup vimrc_fern_settings
+augroup vimrc_fern_preview_settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
 augroup END
