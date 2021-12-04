@@ -18,14 +18,15 @@ let g:which_key_use_floating_win = 0
 
 " t is for terminal
 let g:which_key_map.t = {
-      \ 'name' : '+terminal' ,
-      \ 'g' : [':FloatermNew --height=1.0 --width=0.9 lazygit' , 'git'],
+      \ 'name' : '+terminal',
+      \ 'd' : [':FloatermNew --height=1.0 --width=0.9 lazydocker' , 'lazydocker'],
+      \ 'g' : [':FloatermNew --height=1.0 --width=0.9 lazygit' , 'lazygit'],
       \ 't' : [':FloatermToggle'      , 'toggle'],
       \ }
 
 " g is for git
 let g:which_key_map.g = {
-      \ 'name' : '+git' ,
+      \ 'name' : '+git',
       \ 'b' : [':BlamerToggle'      , 'git blame toggle'],
       \ 'n' : [':GitGutterNextHunk' , 'git next hunk'],
       \ 'p' : [':GitGutterPrevHunk' , 'git previous hunk'],
@@ -33,7 +34,7 @@ let g:which_key_map.g = {
 
 " , is for fzf
 let g:which_key_map[','] = {
-      \ 'name' : '+fzf' ,
+      \ 'name' : '+fzf',
       \ 'b' : [':Buffers' , 'Open buffers'],
       \ 'p' : [':GFiles'  , 'Git files (git ls-files)'],
       \ 'P' : [':Files'   , 'Files'],
