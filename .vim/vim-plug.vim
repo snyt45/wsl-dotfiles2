@@ -4,7 +4,6 @@ Plug 'tomasiser/vim-code-dark'
 
 " File Explorer
 Plug 'lambdalisue/fern.vim'
-  Plug 'yuki-yano/fern-preview.vim'
   Plug 'lambdalisue/fern-git-status.vim'
 
 " fuzzy finder
