@@ -17,6 +17,7 @@ Plug 'voldikss/vim-floaterm'
 
 " Coding
 Plug 'Yggdroot/indentLine'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Other
 Plug 'vim-jp/vimdoc-ja'
