@@ -10,6 +10,26 @@ let mapleader = "\<Space>"
 set encoding=utf-8
 set number
 set laststatus=2
+set virtualedit=block
+set wildmenu
+set noswapfile
+set nobackup
+set noundofile
+
+" 行頭、行末の移動
+nnoremap H ^
+nnoremap L $
+
+" 段落の移動
+nnoremap <C-j> }
+nnoremap <C-k> {
+
+" q で macro record が始まるのがうざいので Leader + q にする
+" 必ず @a に保存し Leader + w で実行する
+noremap <Leader>q qa
+noremap <Leader>w q
+noremap <Leader>e @a
+noremap q <Nop>
 
 " https://qiita.com/Linda_pp/items/9e0c94eb82b18071db34
 if has('vim_starting')
