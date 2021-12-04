@@ -6,7 +6,6 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'lambdalisue/fern.vim'
   Plug 'yuki-yano/fern-preview.vim'
   Plug 'lambdalisue/fern-git-status.vim'
-  Plug 'lambdalisue/fern-hijack.vim'
 
 " fuzzy finder
 Plug 'junegunn/fzf.vim' " Use fzf installed with linuxbrew
