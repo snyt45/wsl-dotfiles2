@@ -1,10 +1,19 @@
 " Show hidden files
 let g:fern#default_hidden=1
 
+" Fernのウィンドウの開き方を変更
+function! s:fern_setup() abort
+  nnoremap <buffer> <nowait> q :<C-u>quit<cr>
+  nmap <buffer>
+      \ <Plug>(fern-action-open)
+      \ <Plug>(fern-action-open:select)
+endfunction
+
 " Vim起動時にfernを開く
 augroup vimrc_fern_settings
   autocmd!
   autocmd VimEnter * ++nested Fern . -drawer -keep -toggle -reveal=%
+  autocmd FileType fern call s:fern_setup()
 augroup END
 
 " VSCodeのようにj/kでリーフコンテンツをプレビューする
