@@ -21,9 +21,9 @@ echo "Gitでユーザー名とメールアドレスを設定しました。"
 echo "Gitで認証情報ヘルパーを設定します。"
 read -rp "UserName [$USER_NAME] " user_name
 
-credential_manager="/mnt/c/Users/${user_name:=$USER_NAME}/AppData/Local/Programs/Git Credential Manager Core/git-credential-manager-core.exe"
+credential_manager="/mnt/c/Users/${user_name:=$USER_NAME}/AppData/Local/Programs/Git Credential Manager/git-credential-manager-core.exe"
 # Git設定用
-credential_manager_git="/mnt/c/Users/${user_name:=$USER_NAME}/AppData/Local/Programs/Git\\ Credential\\ Manager\\ Core/git-credential-manager-core.exe"
+credential_manager_git="/mnt/c/Users/${user_name:=$USER_NAME}/AppData/Local/Programs/Git\\ Credential\\ Manager/git-credential-manager-core.exe"
 
 if test -e "${credential_manager}"; then
     git config --global credential.helper "${credential_manager_git}"
