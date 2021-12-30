@@ -1,7 +1,0 @@
-asciinema
-bat
-fish
-fzf
-lazygit
-ripgrep
-starship
