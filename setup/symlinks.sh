@@ -40,7 +40,6 @@ ln -snfv ~/.dotfiles/.config/fish/fish_plugins ~/.config/fish/
 # ~/.config/fish/conf.d
 mkdir -p ~/.config/fish/conf.d
 ln -snfv ~/.dotfiles/.config/fish/conf.d/env.fish ~/.config/fish/conf.d
-ln -snfv ~/.dotfiles/.config/fish/conf.d/linuxbrew.fish ~/.config/fish/conf.d
 ln -snfv ~/.dotfiles/.config/fish/conf.d/starship.fish ~/.config/fish/conf.d
 
 echo "Done."

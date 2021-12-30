@@ -1,6 +1,3 @@
-" Use fzf installed with linuxbrew
-set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
-
 " ripgrep
 " https://zoshigayan.net/ripgrep-and-fzf-with-vim/
 if executable('rg')

@@ -74,18 +74,11 @@ dockerコマンドを使えるようにするため、Dockerの設定 > WSLイ�
 git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 cd ~/.dotfiles
 
-# linuxbrewのインストール ※カレントシェルで実行
-. setup/linuxbrew.sh
-
 # gitのセットアップ
 sh setup/git.sh
 
 # dev toolのインストール
 xargs brew install < my_formula.txt
-
-# fzfのセットアップ
-# https://snyt45.com/posts/20211031/vim-fzf-ripgrep
-/home/linuxbrew/.linuxbrew/opt/fzf/install
 
 # シンボリックリンク配置
 sh setup/symlinks.sh

@@ -9,8 +9,5 @@ end
 alias lg='lazygit'
 alias ld='lazydocker'
 
-# Linuxbrew
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 # starship
 eval (starship init fish)
