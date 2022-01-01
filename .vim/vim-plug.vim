@@ -11,7 +11,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Git
-Plug 'APZelos/blamer.nvim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'voldikss/vim-floaterm'
