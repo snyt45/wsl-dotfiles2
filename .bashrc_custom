@@ -1,2 +1,108 @@
 # starshilp
 eval "$(starship init bash)"
+
+# ----------------------------------------------------------------------------
+# FZF
+# ----------------------------------------------------------------------------
+
+# コマンド履歴を検索して選択したコマンドを実行
+runcmd (){ perl -e 'ioctl STDOUT, 0x5412, $_ for split //, <>' ; }
+
+fh() {
+  ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -re 's/^\s*[0-9]+\s*//' | runcmd
+}
+
+# コマンド履歴を検索して選択したコマンドを貼り付け
+writecmd (){ perl -e 'ioctl STDOUT, 0x5412, $_ for split //, do{ chomp($_ = <>); $_ }' ; }
+
+fhe() {
+  ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -re 's/^\s*[0-9]+\s*//' | writecmd
+}
+
+# 選択したディレクトリに移動
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+# 選択したディレクトリに移動(隠しディレクトリ含む)
+fda() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+# 選択した親ディレクトリに移動
+fdr() {
+  local declare dirs=()
+  get_parent_dirs() {
+    if [[ -d "${1}" ]]; then dirs+=("$1"); else return; fi
+    if [[ "${1}" == '/' ]]; then
+      for _dir in "${dirs[@]}"; do echo $_dir; done
+    else
+      get_parent_dirs $(dirname "$1")
+    fi
+  }
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
+  cd "$DIR"
+}
+
+# 選択したブランチに移動(remote含む)
+fbr() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# コミットログを検索して表示
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# インタラクティブにgit addする
+fga() {
+  local selected
+  selected=$(\git status -s | fzf -m --ansi --preview="echo {} | awk '{print \$2}' | xargs \git diff --color origin/master" | awk '{print $2}')
+  if [[ -n "$selected" ]]; then
+    git add `paste -s - <<< $selected`
+  fi
+  git status
+}
+
+# 選択したコンテナにログイン
+fde() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+  [ -n "$cid" ] && docker exec -it "$cid" /bin/bash
+}
+
+# 選択したコンテナのログ取得
+fdl() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
+  [ -n "$cid" ] && docker logs -f --tail=200 "$cid"
+}
+
+# 選択したコンテナを再起動
+fdr() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -m -q "$1" | awk '{print $1}')
+  [ -n "$cid" ] && echo $cid | xargs docker restart
+}
+
+# 選択したコンテナを削除
+fdrm() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -m -q "$1" | awk '{print $1}')
+  [ -n "$cid" ] && echo $cid | xargs docker rm -f
+}
