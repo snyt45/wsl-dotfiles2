@@ -16,4 +16,11 @@ set -Ceu
 mkdir -p ~/.vim
 ln -snfv ~/.dotfiles/.vim/vimrc ~/.vim/
 
+###
+# bash
+###
+
+ln -snfv ~/.dotfiles/.bash_profile ~/
+ln -snfv ~/.dotfiles/.bashrc_custom ~/
+
 echo "Done."
