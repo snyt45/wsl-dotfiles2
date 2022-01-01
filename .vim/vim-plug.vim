@@ -10,9 +10,6 @@ Plug 'lambdalisue/fern.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Git
-Plug 'airblade/vim-gitgutter'
-
 " Coding
 Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'

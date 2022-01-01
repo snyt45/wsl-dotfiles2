@@ -16,13 +16,6 @@ let g:which_key_map['e'] = [ ':Fern . -drawer -keep -toggle -reveal=%' , 'explor
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
 
-" g is for git
-let g:which_key_map.g = {
-      \ 'name' : '+git',
-      \ 'n' : [':GitGutterNextHunk' , 'git next hunk'],
-      \ 'p' : [':GitGutterPrevHunk' , 'git previous hunk'],
-      \ }
-
 " , is for fzf
 let g:which_key_map[','] = {
       \ 'name' : '+fzf',
