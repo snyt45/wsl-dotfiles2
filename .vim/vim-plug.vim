@@ -1,6 +1,4 @@
 call plug#begin('~/.vim/plugged')
-" Colorscheme
-Plug 'tomasiser/vim-code-dark'
 
 " File Explorer
 Plug 'lambdalisue/fern.vim'

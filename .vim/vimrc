@@ -50,6 +50,3 @@ map <F5> :wa!<CR>:!git difftool %:p<CR><CR>
 
 " Load Plugin
 source $VIMHOME/vim-plug.vim
-
-colorscheme codedark
-
