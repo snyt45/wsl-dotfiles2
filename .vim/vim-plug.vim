@@ -1,9 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-" File Explorer
-Plug 'lambdalisue/fern.vim'
-  Plug 'lambdalisue/fern-git-status.vim'
-
 " fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
