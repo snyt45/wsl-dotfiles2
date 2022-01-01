@@ -16,14 +16,6 @@ let g:which_key_map['e'] = [ ':Fern . -drawer -keep -toggle -reveal=%' , 'explor
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
 
-" t is for terminal
-let g:which_key_map.t = {
-      \ 'name' : '+terminal',
-      \ 'd' : [':FloatermNew --height=1.0 --width=0.9 lazydocker' , 'lazydocker'],
-      \ 'g' : [':FloatermNew --height=1.0 --width=0.9 lazygit' , 'lazygit'],
-      \ 't' : [':FloatermToggle'      , 'toggle'],
-      \ }
-
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git',

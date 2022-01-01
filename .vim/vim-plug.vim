@@ -13,8 +13,6 @@ Plug 'junegunn/fzf.vim'
 " Git
 Plug 'airblade/vim-gitgutter'
 
-Plug 'voldikss/vim-floaterm'
-
 " Coding
 Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
