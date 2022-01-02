@@ -27,7 +27,7 @@ bind -x '"\C-r": _replace_by_history' # Ctrl-R の履歴検索を上書きする
 # ファイル検索してVimで開く
 _open_file_vim() {
   files=$(find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//) &&
-  selected_files=$(echo "$files" | fzf --prompt 'all files> ') &&
+  selected_files=$(echo "$files" | fzf --prompt 'all files> ' --preview="bat --color=always --style=header,grid --line-range :100 {}") &&
   vim $selected_files
 }
 bind -x '"\C-p": _open_file_vim'
@@ -35,7 +35,7 @@ bind -x '"\C-p": _open_file_vim'
 # ファイル検索してVimで開く(Git管理のみ対象)
 _open_git_file_vim() {
   files=$(git ls-files) &&
-  selected_files=$(echo "$files" | fzf --prompt 'git files> ') &&
+  selected_files=$(echo "$files" | fzf --prompt 'git files> ' --preview="bat --color=always --style=header,grid --line-range :100 {}") &&
   vim $selected_files
 }
 bind -x '"\C-g": _open_git_file_vim'
