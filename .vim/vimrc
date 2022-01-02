@@ -18,6 +18,13 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 " These are things that I mistype and want ignored.
 noremap q <silent>
 
+" fzf.vim shortcut
+nnoremap <silent> <leader>f :GFiles<CR>
+nnoremap <silent> <leader>F :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>l :BLines<CR>
+nnoremap <silent> <leader>h :History<CR>
+
 " ----------------------------------------------------------------------------
 " SETTINGS
 " ----------------------------------------------------------------------------
