@@ -29,6 +29,8 @@ nnoremap <silent> <leader>h :History<CR>
 " SETTINGS
 " ----------------------------------------------------------------------------
 
+colorscheme desert
+
 " Search Text highlight
 set hlsearch
 
