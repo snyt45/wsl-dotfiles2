@@ -72,6 +72,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
 Plug 'vim-jp/vimdoc-ja'
 
 call plug#end()
