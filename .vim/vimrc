@@ -18,14 +18,6 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 " These are things that I mistype and want ignored.
 noremap q <silent>
 
-" Clipboard key mapping
-nnoremap <silent>yy :.w !win32yank.exe -i<CR><CR>
-vnoremap <silent>y :w !win32yank.exe -i<CR><CR>
-nnoremap <silent>dd :.w !win32yank.exe -i<CR>dd
-vnoremap <silent>d x:let pos = getpos(".")<CR>GpVG:w !win32yank.exe -i<CR>VGx:call setpos(".", pos)<CR>
-nnoremap <silent>p :r !win32yank.exe -o<CR>
-vnoremap <silent>p :r !win32yank.exe -o<CR>
-
 " ----------------------------------------------------------------------------
 " SETTINGS
 " ----------------------------------------------------------------------------
@@ -54,6 +46,12 @@ if has('vim_starting')
     " 置換モード時に非点滅の下線タイプのカーソル
     let &t_SR .= "\e[4 q"
 endif
+
+" Clipboard
+augroup Yank
+  au!
+  autocmd TextYankPost * :call system('clip.exe', @")
+augroup END
 
 " ----------------------------------------------------------------------------
 " PLUGINS

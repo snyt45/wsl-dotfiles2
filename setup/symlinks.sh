@@ -9,13 +9,6 @@ set -Ceu
 # v: リンクの作成時にリンクの情報を表示する
 
 ###
-# bin
-###
-
-mkdir -p ~/bin
-ln -snfv ~/.dotfiles/bin/win32yank.exe ~/bin/
-
-###
 # vim
 ###
 
