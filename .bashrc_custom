@@ -40,6 +40,14 @@ _open_git_file_vim() {
 }
 bind -x '"\C-g": _open_git_file_vim'
 
+# 全文検索してVimで開く
+_fzf_ripgrep() {
+	files=$(rg --hidden --no-ignore --line-number --no-heading --glob '!.git/*' --invert-match '^\s*$' 2>/dev/null)
+  read -r file line <<<$(echo "$files" | fzf --select-1 --exit-0 | awk -F: '{print $1, $2}')
+	vim $file +$line
+}
+bind -x '"\C-f": _fzf_ripgrep'
+
 # 選択したブランチに移動(remote含む)
 fbr() {
   local branches branch
