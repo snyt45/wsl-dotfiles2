@@ -149,7 +149,11 @@ Invoke-Expression("&{$script} -DistroName '[DistroName]' -InstallLocation 'C:\Us
 
 ### セットアップ
 
-適宜Ubuntu上でセットアップを行って下さい。
+`sudo apt install bash-completion`は必ず行うこと。
+bashではTAB または ESC連打で補完機能が働くが、何もない状態でも補完機能が働いてしまいフリーズする。
+bash-completionを入れると、何も入力されていないときは補完機能が働かないようになってくれる。
+
+上記以外は、適宜Ubuntu上でセットアップを行う。
 
 ### 追加したLinux ディストリビューションを登録解除
 
