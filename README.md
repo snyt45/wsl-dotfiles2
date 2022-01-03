@@ -69,6 +69,10 @@ sudo dpkg --force-overwrite -i ripgrep*.deb
 
 ##### bat
 
+`sudo dpkg --force-overwrite -i bat*.deb`実行時にUbuntu20.04の問題でripgrepとbatのファイルがコンフリクトする。
+
+`sudo apt --fix-broken install`すると解消する。
+
 ```
 sudo apt download bat
 sudo dpkg --force-overwrite -i bat*.deb
