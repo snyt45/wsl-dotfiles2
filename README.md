@@ -35,10 +35,11 @@ sh ~/.dotfiles/setup/git.sh
 
 #### 必要な依存関係のインストール
 
-##### Volta
+##### Volta、Node.js
 
 ```
 curl https://get.volta.sh | bash
+volta install node@14
 ```
 
 ##### Vim
