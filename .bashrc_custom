@@ -55,7 +55,7 @@ _fzf_ripgrep() {
 bind -x '"\C-f": _fzf_ripgrep'
 
 # 選択したブランチに移動(remote含む)
-fbr() {
+gbc() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
@@ -64,7 +64,7 @@ fbr() {
 }
 
 # コミットログを検索して表示
-fshow() {
+gshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
@@ -76,7 +76,7 @@ FZF-EOF"
 }
 
 # インタラクティブにgit addする
-fga() {
+gadd() {
   local selected
   selected=$(\git status -s | fzf -m --ansi --preview="echo {} | awk '{print \$2}' | xargs \git diff --color origin/master" | awk '{print $2}')
   if [[ -n "$selected" ]]; then
@@ -86,29 +86,41 @@ fga() {
 }
 
 # 選択したコンテナにログイン
-fde() {
+da() {
   local cid
   cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
   [ -n "$cid" ] && docker exec -it "$cid" /bin/bash
 }
 
 # 選択したコンテナのログ取得
-fdl() {
+dl() {
   local cid
   cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
   [ -n "$cid" ] && docker logs -f --tail=200 "$cid"
 }
 
 # 選択したコンテナを再起動
-fdr() {
+dr() {
   local cid
   cid=$(docker ps -a | sed 1d | fzf -m -q "$1" | awk '{print $1}')
   [ -n "$cid" ] && echo $cid | xargs docker restart
 }
 
 # 選択したコンテナを削除
-fdrm() {
+drmc() {
   local cid
   cid=$(docker ps -a | sed 1d | fzf -m -q "$1" | awk '{print $1}')
   [ -n "$cid" ] && echo $cid | xargs docker rm -f
+}
+
+# 選択したイメージを削除
+drmi(){
+  selection=$(docker images | fzf | awk '{print $3}')
+  [ -n "$selection" ] && docker rmi $selection
+}
+
+# 選択したボリュームを削除
+drmv(){
+  selection=$(docker volume ls | fzf | awk '{print $3}')
+  [ -n "$selection" ] && docker volume rm $selection
 }
