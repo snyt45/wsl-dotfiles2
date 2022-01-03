@@ -24,7 +24,7 @@ Microsoft Store経由でインストールしたUbuntu(20.04)のセットアッ�
 #### git cloneする
 
 ```
-git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfile
+git clone https://github.com/snyt45/wsl-dotfiles2.git ~/.dotfiles
 ```
 
 #### Gitのセットアップ
