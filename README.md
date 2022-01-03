@@ -116,3 +116,43 @@ vi
 
 ### リセット
 システム(`WIn + I`) > アプリ > アプリと機能 > Ubuntu > リセット
+
+## WSLにLinux ディストリビューションを追加する
+
+### 前提条件
+
+OS: Windows11
+
+Microsoft Store経由でインストールしたUbuntu(20.04)のセットアップが完了している状態を想定しています。
+
+### 追加手順
+
+1. tarファイルをexport(WSL)
+
+```
+# tempフォルダを作成
+mkdir -p /mnt/c/temp
+
+# C:\temp\にubuntu-unminimize.tarという名前のtarファイルをエクスポートする
+sh ~/.dotfiles/distribution/export_tar.sh
+```
+
+2. WSLにUbuntuを追加(Windows PowerShell)
+
+`[DistroName]`は適宜修正してください。
+
+```
+$script = (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/snyt45/wsl-dotfiles2/main/distribution/import_tar.ps1')
+
+Invoke-Expression("&{$script} -DistroName '[DistroName]' -InstallLocation 'C:\Users\snyt45\AppData\Local\Packages\[DistroName]' -InstallTarFile 'C:\temp\ubuntu-unminimize.tar'")
+```
+
+### セットアップ
+
+適宜Ubuntu上でセットアップを行って下さい。
+
+### 追加したLinux ディストリビューションを登録解除
+
+```
+wsl --unregister <DistroName>
+```
