@@ -37,6 +37,8 @@ sh ~/.dotfiles/setup/git.sh
 
 ##### Volta、Node.js
 
+Node.jsはvim-lspの依存関係として必要。
+
 ```
 curl https://get.volta.sh | bash
 volta install node@14
@@ -88,7 +90,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
-##### Hugo
+##### Hugo ※任意
 
 ```
 wget https://github.com/gohugoio/hugo/releases/download/v0.91.2/hugo_extended_0.91.2_Linux-64bit.deb
