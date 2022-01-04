@@ -101,6 +101,23 @@ sudo apt install ./hugo_extended_0.91.2_Linux-64bit.deb
 sudo git clone https://github.com/b4b4r07/enhancd.git /usr/local/src/enhancd
 ```
 
+#### rbenv
+
+```
+sudo apt install rbenv
+
+# install ruby-build
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
+# doctor check
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+
+# install ruby
+rbenv install 2.6.5
+rbenv global 2.6.5
+```
+
 #### シンボリックリンク配置
 
 ```
