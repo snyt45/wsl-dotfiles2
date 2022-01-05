@@ -19,8 +19,9 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 noremap q <silent>
 
 " fzf.vim shortcut
-nnoremap <silent> <leader>f :GFiles<CR>
-nnoremap <silent> <leader>F :GFiles?<CR>
+nnoremap <silent> <leader>p :GFiles<CR>
+nnoremap <silent> <leader>P :GFiles?<CR>
+nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>h :History<CR>

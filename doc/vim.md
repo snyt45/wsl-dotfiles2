@@ -1,10 +1,12 @@
 
 ## fzf.vim
 
-- `SPC + f`
+- `SPC + p`
   - ファイル検索(`:GFiles`)
-- `SPC + F`
+- `SPC + P`
   - git statusのファイル検索(`:GFiles?`)
+- `SPC + f`
+  - ファイル全文検索(`:Rg`)
 - `SPC + b`
   - バッファ検索(`:Buffers`)
 - `SPC + l`
