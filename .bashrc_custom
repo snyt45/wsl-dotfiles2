@@ -13,11 +13,11 @@ if command -v starship &> /dev/null; then
 fi;
 
 # ----------------------------------------------------------------------------
-# enhancd
+# zoxide
 # ----------------------------------------------------------------------------
-
-source /usr/local/src/enhancd/init.sh
-export ENHANCD_FILTER="fzf"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init bash)"
+fi;
 
 # ----------------------------------------------------------------------------
 # Volta

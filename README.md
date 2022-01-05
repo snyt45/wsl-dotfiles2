@@ -97,10 +97,10 @@ wget https://github.com/gohugoio/hugo/releases/download/v0.91.2/hugo_extended_0.
 sudo apt install ./hugo_extended_0.91.2_Linux-64bit.deb
 ```
 
-##### enhancd
+##### zoxide
 
 ```
-sudo git clone https://github.com/b4b4r07/enhancd.git /usr/local/src/enhancd
+curl -sS https://webinstall.dev/zoxide | bash
 ```
 
 #### rbenv
