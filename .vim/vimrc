@@ -25,6 +25,7 @@ nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>r :History:<CR>
 
 " asyncomplete.vim shortcut
 inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<Tab>"

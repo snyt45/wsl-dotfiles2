@@ -1,6 +1,8 @@
 
 ## fzf.vim
 
+- `SPC + r`
+  - コマンド履歴検索(`:History:`)
 - `SPC + p`
   - ファイル検索(`:GFiles`)
 - `SPC + P`
