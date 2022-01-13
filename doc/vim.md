@@ -1,19 +1,17 @@
 
 ## fzf.vim
 
-- `SPC + r`
+- `Ctrl + r`
   - コマンド履歴検索(`:History:`)
-- `SPC + p`
-  - ファイル検索(`:GFiles`)
-- `SPC + P`
-  - git statusのファイル検索(`:GFiles?`)
-- `SPC + f`
+- `Ctrl + p`
+  - ファイル検索(`:GFiles` or `:Files`)
+- `Ctrl + f`
   - ファイル全文検索(`:Rg`)
-- `SPC + b`
+- `Ctrl + b`
   - バッファ検索(`:Buffers`)
-- `SPC + l`
+- `Ctrl + l`
   - バッファ全文検索(`:BLines`)
-- `SPC + h`
+- `Ctrl + h`
   - 最近開いたファイル検索(`:History`)
 
 ## vim-lsp

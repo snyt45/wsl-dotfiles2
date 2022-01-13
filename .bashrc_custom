@@ -48,7 +48,6 @@ _replace_by_history() {
 }
 bind -x '"\C-r": _replace_by_history'
 
-# ファイル検索してVimで開く
 _open_file_vim() {
   files=$(find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//) &&
   selected_files=$(echo "$files" | \
@@ -57,9 +56,7 @@ _open_file_vim() {
                        --preview-window 'right,60%,+{2}+3/3') &&
   vim $selected_files
 }
-bind -x '"\C-p": _open_file_vim'
 
-# ファイル検索してVimで開く(Git管理のみ対象)
 _open_git_file_vim() {
   files=$(git ls-files) &&
   selected_files=$(echo "$files" | \
@@ -68,7 +65,16 @@ _open_git_file_vim() {
                        --preview-window 'right,60%,+{2}+3/3') &&
   vim $selected_files
 }
-bind -x '"\C-g": _open_git_file_vim'
+
+# git管理されていれば_open_git_file_vim、そうでなければ_open_file_vimを実行する
+_fzf_omni_files() {
+	if [ -n "$(git status 2> /dev/null)" ]; then
+    _open_git_file_vim
+  else
+    _open_file_vim
+	fi
+}
+bind -x '"\C-p": _fzf_omni_files'
 
 # 全文検索してVimで開く
 _fzf_ripgrep() {

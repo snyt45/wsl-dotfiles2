@@ -18,13 +18,11 @@
 ## fzf
 
 ### 検索
-- `Ctrl + R`
+- `Ctrl + r`
   - コマンド履歴検索
-- `Ctrl + P`
-  - ファイル検索
-- `Ctrl + G`
-  - ファイル検索(Git管理のみ)
-- `Ctrl + F`
+- `Ctrl + p`
+  - ファイル検索(`Git対象のみ` or `全てのファイル`)
+- `Ctrl + f`
   - 全文検索(ripgrep)
 
 ### Git
