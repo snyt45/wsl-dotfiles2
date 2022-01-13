@@ -137,8 +137,8 @@ augroup vimrc_vim_gitgutter
 augroup END
 
 " netrw
-" ファイルツリーの表示形式、1にするとls -laのような表示になります
-let g:netrw_liststyle=1
+" 表示形式をTreeViewに変更
+let g:netrw_liststyle=3
 " ヘッダを非表示にする
 let g:netrw_banner=0
 " サイズを(K,M,G)で表示する
