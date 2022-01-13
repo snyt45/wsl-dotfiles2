@@ -7,11 +7,11 @@
   - ファイル検索(`:GFiles` or `:Files`)
 - `Ctrl + f`
   - ファイル全文検索(`:Rg`)
-- `Ctrl + b`
+- `SPC + b`
   - バッファ検索(`:Buffers`)
-- `Ctrl + l`
+- `SPC + l`
   - バッファ全文検索(`:BLines`)
-- `Ctrl + h`
+- `SPC + h`
   - 最近開いたファイル検索(`:History`)
 
 ## vim-lsp
