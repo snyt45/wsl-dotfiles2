@@ -16,6 +16,38 @@
 - `SPC + h`
   - 最近開いたファイル検索(`:History`)
 
+## fugitive.vim
+
+- `gs`
+    - git status画面でadd、diffなどの操作を行う(`:Git`)
+    - よく使う
+        - `=`
+            - カーソル下のファイルをdiff(トグル)
+        - `s`
+            - カーソル下のファイルをステージ
+        - `u`
+            - カーソル下のファイルをアンステージ
+        - `U`
+            - 全てのファイルをアンステージ
+        - `ga`
+            - 全てのファイルをステージ
+        - `X`
+            - カーソル下の変更を破棄
+- `ga`
+    - 全てのファイルをステージ(`:Git add -A`)
+- `gc`
+    - コメント付きコミット(`:Git commit`)
+- `gb`
+    - blame(`:Git blame`)
+- `gd`
+    - 一時バッファでdiff表示(`:Git diff`)
+- `gl`
+    - 一時バッファでlog表示(`:Git log`)
+- `gps`
+    - Push(`:Git push`)
+- `gpl`
+    - Pull(`:Git pull`)
+
 ## vim-gitgutter
 - `]c`
     - 次のハンクにジャンプ
