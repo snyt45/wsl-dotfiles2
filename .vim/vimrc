@@ -31,11 +31,17 @@ augroup END
 " fzf.vim shortcut
 " git管理されていれば:GFiles、そうでなければ:Filesを実行する
 function! FzfOmniFiles()
-  let is_git = system('git status')
   if v:shell_error
     :Files
   else
-    :GFiles
+		let is_git_root = system('git rev-parse --show-toplevel')
+    let current_dir = system('pwd')
+		" Gitリポジトリでルート以外にいるときはカレントディレクトリ配下を絞り込む
+		if current_dir == is_git_root
+			:GFiles
+		else
+      :Files
+		endif
   endif
 endfunction
 nnoremap <silent> <leader>r :History:<CR>
@@ -166,3 +172,5 @@ let g:netrw_banner=0
 " let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
 " プレビューウィンドウを垂直分割で表示する
 let g:netrw_preview=1
+" ディレクトリを移動する度にカレントディレクトリを設定
+let g:netrw_keepdir=0
