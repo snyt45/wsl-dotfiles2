@@ -5,6 +5,8 @@
   - コマンド履歴検索(`:History:`)
 - `SPC + p`
   - ファイル検索(`:GFiles` or `:Files`)
+- `SPC + g`
+  - git statusされているファイル検索(`:GFiles?`)
 - `SPC + f`
   - ファイル全文検索(`:Rg`)
 - `SPC + b`

@@ -33,6 +33,7 @@ function! FzfOmniFiles()
 endfunction
 nnoremap <silent> <leader>r :History:<CR>
 nnoremap <silent> <leader>p :call FzfOmniFiles()<CR>
+nnoremap <silent> <leader>g :GFiles?<CR>
 nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :BLines<CR>
