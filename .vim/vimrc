@@ -20,6 +20,13 @@ noremap q <silent>
 
 " netrw shorcut
 nnoremap <silent> <leader>e :Ex<CR>
+augroup vimrc_netrw
+  autocmd!
+  " h key is  up
+  autocmd FileType netrw nmap <buffer> h -
+  " l key is  Open file, change directory
+	autocmd FileType netrw nmap <buffer> l <CR>
+augroup END
 
 " fzf.vim shortcut
 " git管理されていれば:GFiles、そうでなければ:Filesを実行する
