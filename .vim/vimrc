@@ -123,7 +123,7 @@ let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
 
 " Default key mapping off
-let g:gitgutter_map_keys = 0
+" let g:gitgutter_map_keys = 0
 
 " Execute after loading the color schema
 " https://teratail.com/questions/29844#reply-46767

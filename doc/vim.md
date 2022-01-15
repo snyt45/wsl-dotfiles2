@@ -16,6 +16,18 @@
 - `SPC + h`
   - 最近開いたファイル検索(`:History`)
 
+## vim-gitgutter
+- `]c`
+    - 次のハンクにジャンプ
+- `[c`
+    - 前のハンクにジャンプ
+- `SPC + hs`
+    - ハンクをステージ
+- `SPC + hu`
+    - ハンクをアンステージ
+- `SPC + hp`
+    - ハンクをプレビュー
+
 ## markdown-preview.nvim
 
 - `:MarkdownPreview`
