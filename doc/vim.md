@@ -1,11 +1,11 @@
 
 ## fzf.vim
 
-- `Ctrl + r`
+- `SPC + r`
   - コマンド履歴検索(`:History:`)
-- `Ctrl + p`
+- `SPC + p`
   - ファイル検索(`:GFiles` or `:Files`)
-- `Ctrl + f`
+- `SPC + f`
   - ファイル全文検索(`:Rg`)
 - `SPC + b`
   - バッファ検索(`:Buffers`)
