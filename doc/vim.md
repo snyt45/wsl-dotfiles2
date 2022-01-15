@@ -14,6 +14,11 @@
 - `SPC + h`
   - 最近開いたファイル検索(`:History`)
 
+## markdown-preview.nvim
+
+- `:MarkdownPreview`
+  - ブラウザでマークダウンのプレビュー表示
+
 ## vim-lsp
 
 - `:LspInstallServer`
