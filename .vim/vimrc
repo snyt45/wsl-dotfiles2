@@ -71,8 +71,6 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 " SETTINGS
 " ----------------------------------------------------------------------------
 
-colorscheme desert
-
 " Search Text highlight
 set hlsearch
 
@@ -120,6 +118,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
+Plug 'morhetz/gruvbox'
 Plug 'vim-jp/vimdoc-ja'
 
 call plug#end()
@@ -127,6 +126,9 @@ call plug#end()
 " ----------------------------------------------------------------------------
 " PLUGIN SETTINGS
 " ----------------------------------------------------------------------------
+
+set background=dark
+colorscheme gruvbox
 
 " vimdoc-ja
 set helplang=ja,en
