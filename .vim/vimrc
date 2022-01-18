@@ -29,7 +29,7 @@ augroup vimrc_netrw
   " h key is  up
   autocmd FileType netrw nmap <buffer> h -
   " l key is  Open file, change directory
-	autocmd FileType netrw nmap <buffer> l <CR>
+  autocmd FileType netrw nmap <buffer> l <CR>
 augroup END
 
 " fzf.vim shortcut
@@ -87,6 +87,7 @@ set noswapfile
 set nobackup
 set noundofile
 set tabstop=2
+set expandtab
 set smartindent
 set shiftwidth=2
 
@@ -106,9 +107,16 @@ augroup Yank
   autocmd TextYankPost * :call system('clip.exe', @")
 augroup END
 
-" タブ、行末の空白、改行、空白を可視化
+" タブ、空白を可視化
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%,space:_
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:.
+
+" 全角スペースと行末の半角スペースを赤くする
+augroup highlightSpace
+  autocmd!
+  autocmd Colorscheme * hi IdeographicSpace term=underline ctermbg=DarkRed guibg=DarkRed
+  autocmd VimEnter,WinEnter * match IdeographicSpace /　\|\s\+$/
+augroup END
 
 " ----------------------------------------------------------------------------
 " PLUGINS
@@ -191,5 +199,5 @@ let g:netrw_keepdir=0
 let g:fzf_preview_window = ['down:60%', 'ctrl-/']
 
 " indentLine
-let g:indentLine_char=' '
-let g:indentLine_bgcolor_term=240
+let g:indentLine_char='|'
+let g:indentLine_color_term=240
