@@ -38,14 +38,14 @@ function! FzfOmniFiles()
   if v:shell_error
     :Files
   else
-		let is_git_root = system('git rev-parse --show-toplevel')
+    let is_git_root = system('git rev-parse --show-toplevel')
     let current_dir = system('pwd')
-		" Gitリポジトリでルート以外にいるときはカレントディレクトリ配下を絞り込む
-		if current_dir == is_git_root
-			:GFiles
-		else
+    " Gitリポジトリでルート以外にいるときはカレントディレクトリ配下を絞り込む
+    if current_dir == is_git_root
+      :GFiles
+    else
       :Files
-		endif
+    endif
   endif
 endfunction
 nnoremap <silent> <leader>r :History:<CR>
@@ -106,6 +106,10 @@ augroup Yank
   autocmd TextYankPost * :call system('clip.exe', @")
 augroup END
 
+" タブ、行末の空白、改行、空白を可視化
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%,space:_
+
 " ----------------------------------------------------------------------------
 " PLUGINS
 " ----------------------------------------------------------------------------
@@ -117,6 +121,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -184,3 +189,7 @@ let g:netrw_keepdir=0
 
 " fzf.vim
 let g:fzf_preview_window = ['down:60%', 'ctrl-/']
+
+" indentLine
+let g:indentLine_char=' '
+let g:indentLine_bgcolor_term=240
