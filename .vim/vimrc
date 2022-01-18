@@ -9,8 +9,8 @@ nnoremap H ^
 nnoremap L $
 
 " 段落の移動
-nnoremap <C-j> 10j
-nnoremap <C-k> 10k
+nnoremap <C-j> 5j
+nnoremap <C-k> 5k
 
 " highlight off
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
