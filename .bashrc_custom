@@ -53,7 +53,7 @@ _open_file_vim() {
   selected_files=$(echo "$files" | \
                    fzf --prompt 'all files> ' \
                        --preview="bat --color=always {1} --highlight-line {2}" \
-                       --preview-window 'right,60%,+{2}+3/3') &&
+                       --preview-window 'down,60%,+{2}+3/3') &&
   vim $selected_files
 }
 
@@ -62,7 +62,7 @@ _open_git_file_vim() {
   selected_files=$(echo "$files" | \
                    fzf --prompt 'git files> ' \
                        --preview="bat --color=always {1} --highlight-line {2}" \
-                       --preview-window 'right,60%,+{2}+3/3') &&
+                       --preview-window 'down,60%,+{2}+3/3') &&
   vim $selected_files
 }
 
@@ -87,7 +87,7 @@ _fzf_ripgrep() {
         --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
         --delimiter : \
         --preview 'bat --color=always {1} --highlight-line {2}' \
-        --preview-window 'right,60%,+{2}+3/3'
+        --preview-window 'down,60%,+{2}+3/3'
   )
   [ -n "${selected[0]}" ] && vim "${selected[0]}" "+${selected[1]}"
 }

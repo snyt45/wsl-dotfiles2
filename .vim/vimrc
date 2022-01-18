@@ -176,3 +176,6 @@ let g:netrw_banner=0
 let g:netrw_preview=1
 " ディレクトリを移動する度にカレントディレクトリを設定
 let g:netrw_keepdir=0
+
+" fzf.vim
+let g:fzf_preview_window = ['down:60%', 'ctrl-/']
