@@ -199,5 +199,8 @@ let g:netrw_keepdir=0
 let g:fzf_preview_window = ['down:60%', 'ctrl-/']
 
 " indentLine
-let g:indentLine_char='|'
+let g:indentLine_first_char='│'
+let g:indentLine_char='│'
 let g:indentLine_color_term=240
+let g:indentLine_indentLevel=20
+let g:indentLine_showFirstIndentLevel=1
