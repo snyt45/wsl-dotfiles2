@@ -129,7 +129,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -197,10 +196,3 @@ let g:netrw_keepdir=0
 
 " fzf.vim
 let g:fzf_preview_window = ['down:60%', 'ctrl-/']
-
-" indentLine
-let g:indentLine_first_char='│'
-let g:indentLine_char='│'
-let g:indentLine_color_term=240
-let g:indentLine_indentLevel=20
-let g:indentLine_showFirstIndentLevel=1
