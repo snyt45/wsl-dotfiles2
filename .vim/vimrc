@@ -90,6 +90,7 @@ set tabstop=2
 set expandtab
 set smartindent
 set shiftwidth=2
+set mouse=a
 
 " https://qiita.com/Linda_pp/items/9e0c94eb82b18071db34
 if has('vim_starting')
