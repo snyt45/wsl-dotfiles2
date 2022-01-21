@@ -109,7 +109,7 @@ augroup END
 
 " タブ、空白を可視化
 set list
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,space:.
+set listchars=tab:»-,extends:»,precedes:«
 
 " 全角スペースと行末の半角スペースを赤くする
 augroup highlightSpace
