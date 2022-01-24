@@ -115,9 +115,9 @@
 ## tab
 
 - `:tabnew`
-  - タブの生成
+  - タブの生成(`SPC + t`)
 - `:tabnext`/`:tabprevious`
-  - 次のタブへ移動(`gt`)/前のタブへ移動(`gT`)
+  - 次のタブへ移動(`gt`、`Ctrl + l`)/前のタブへ移動(`gT`、`Ctrl + h`)
 - `:tabs`
   - タブ一覧の表示
 
