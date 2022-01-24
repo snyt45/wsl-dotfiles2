@@ -12,6 +12,11 @@ nnoremap L $
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
 
+" タブ
+nmap <C-l> :tabnext<CR>
+nmap <C-h> :tabprevious<CR>
+nmap <leader>t :tabnew<CR>
+
 " highlight off
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 
