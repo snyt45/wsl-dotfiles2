@@ -23,6 +23,9 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 " These are things that I mistype and want ignored.
 noremap q <silent>
 
+" カレントバッファのファイルパスをクリップボードにコピー
+nnoremap <leader><C-g> :<C-u>echo "copied fullpath: " . expand('%:p') \| let @"=expand('%:p') \| call system('clip.exe', @")<CR>
+
 " accelerated-jk shortcut
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
