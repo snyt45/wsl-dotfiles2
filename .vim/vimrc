@@ -100,6 +100,10 @@ set smartindent
 set shiftwidth=2
 set mouse=a
 
+" コードの折りたたみ
+set foldmethod=indent
+set foldlevel=8
+
 " https://qiita.com/Linda_pp/items/9e0c94eb82b18071db34
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル
