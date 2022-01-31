@@ -195,8 +195,6 @@ augroup vimrc_vim_gitgutter
 augroup END
 
 " netrw
-" 表示形式をTreeViewに変更
-let g:netrw_liststyle=3
 " ヘッダを非表示にする
 let g:netrw_banner=0
 " プレビューウィンドウを垂直分割で表示する
