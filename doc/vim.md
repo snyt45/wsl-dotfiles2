@@ -89,6 +89,11 @@
 - `gf`
   - カーソル下の文字列から対応するファイルを開く
 
+## vim-sonictemplate
+
+- `:Template <Tab>`
+  - 言語ごとにテンプレートが用意されている。<Tab>で切り替えてエンターでテンプレートが挿入される。
+
 ## vim-plug
 
 - `:PlugInstall`
