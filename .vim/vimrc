@@ -158,6 +158,7 @@ Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
 Plug 'mattn/vim-sonictemplate'
 Plug 'alvan/vim-closetag'
+Plug 'andymass/vim-matchup'
 Plug 'skanehira/translate.vim'
 Plug 'vim-jp/vimdoc-ja'
 
