@@ -156,6 +156,7 @@ Plug 'tpope/vim-rails'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
+Plug 'mattn/vim-sonictemplate'
 Plug 'skanehira/translate.vim'
 Plug 'vim-jp/vimdoc-ja'
 
