@@ -157,6 +157,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
 Plug 'mattn/vim-sonictemplate'
+Plug 'alvan/vim-closetag'
 Plug 'skanehira/translate.vim'
 Plug 'vim-jp/vimdoc-ja'
 
