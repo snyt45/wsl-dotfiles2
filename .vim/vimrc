@@ -74,6 +74,9 @@ nnoremap <silent> gl :Git log<CR>
 nnoremap <silent> gps :Git push<CR>
 nnoremap <silent> gpl :Git pull<CR>
 
+" vim-lsp shortcut
+nmap K :LspHover<CR>
+
 " asyncomplete.vim shortcut
 inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -142,14 +145,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'tpope/vim-rails'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
+Plug 'skanehira/translate.vim'
 Plug 'vim-jp/vimdoc-ja'
 
 call plug#end()
@@ -207,3 +214,12 @@ let g:netrw_winsize=80
 
 " fzf.vim
 let g:fzf_preview_window = ['down:60%', 'ctrl-/']
+
+" vim-lsp
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_hover_ui = 'float'
+let g:asyncomplete_auto_popup = 1
+
+" translate.vim
+let g:translate_popup_window = 0

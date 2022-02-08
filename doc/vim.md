@@ -71,6 +71,16 @@
 
 - `:LspInstallServer`
   - lspServerをインストール
+- `:LspManageServers`
+  - LSPの管理画面を開く。 `i`でインストール。`x`でアンインストール、`b`でブラウザで開く、`?`で補足情報を表示
+- `:LspDocumentDiagnostics`
+  - 詳細なエラー情報を別ウィンドウで表示
+- `K`
+  - カーソル下のシンボルの情報をホバー表示(`:LspHover`)
+
+## translate.vim
+
+- 翻訳したい箇所を選択して`Translate`
 
 ## vim-rails
 
