@@ -88,6 +88,7 @@ inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " Search Text highlight
 set hlsearch
+set incsearch
 
 set encoding=utf-8
 set number
