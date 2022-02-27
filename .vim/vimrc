@@ -26,6 +26,22 @@ noremap q <silent>
 " カレントバッファのファイルパスをクリップボードにコピー
 nnoremap <leader><C-g> :<C-u>echo "copied fullpath: " . expand('%:p') \| let @"=expand('%:p') \| call system('clip.exe', @")<CR>
 
+" Toggle quickfix
+if exists('g:__QUICKFIX_TOGGLE__')
+  finish
+endif
+let g:__QUICKFIX_TOGGLE__ = 1
+
+function! ToggleQuickfix()
+  let l:nr = winnr('$')
+  cwindow
+  let l:nr2 = winnr('$')
+  if l:nr == l:nr2
+    cclose
+  endif
+endfunction
+nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
+
 " accelerated-jk shortcut
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
