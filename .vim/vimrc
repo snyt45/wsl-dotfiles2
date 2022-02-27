@@ -47,7 +47,7 @@ nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 
 " netrw shorcut
-nnoremap <silent> <leader>e :Ex<CR>
+nnoremap <silent> <leader>e :Explore<CR>
 augroup vimrc_netrw
   autocmd!
   " h key is  Open file, change directory
