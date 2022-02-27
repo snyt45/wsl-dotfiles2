@@ -103,9 +103,9 @@
 
 ## vim-terminal
 
-- `:term ++close bash -l`
+- `sh`(`:term ++close bash -l`)
   - bashをログインシェルとして起動。ジョブモードを終了したときに自動的にターミナルを閉じる。
-- `Ctrl + w + N`
+- `C-q`(`Ctrl + w + N`)
   - Terminal-Normalモードに切り替え。
 	- `i`や`A`を追すと通常のターミナルモードに戻る。
 

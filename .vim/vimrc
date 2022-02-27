@@ -42,6 +42,12 @@ function! ToggleQuickfix()
 endfunction
 nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
 
+" ログインシェルとしてbashを開く
+nnoremap sh :term ++close bash -l<CR>
+
+" C-q でTerminal Normalモードへ切替え
+tnoremap <C-Q> <C-W>N
+
 " accelerated-jk shortcut
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
@@ -118,7 +124,7 @@ set tabstop=2
 set expandtab
 set smartindent
 set shiftwidth=2
-set mouse=a
+" set mouse=a
 
 " コードの折りたたみ
 set foldmethod=indent
