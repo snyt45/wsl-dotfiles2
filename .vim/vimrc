@@ -45,8 +45,8 @@ nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
 " ログインシェルとしてbashを開く
 nnoremap sh :term ++close bash -l<CR>
 
-" C-q でTerminal Normalモードへ切替え
-tnoremap <C-Q> <C-W>N
+" Terminal Normalモード/Jobモード トグル
+tmap <C-t><C-t> <C-W>N
 
 " accelerated-jk shortcut
 nmap j <Plug>(accelerated_jk_gj)
