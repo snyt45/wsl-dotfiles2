@@ -52,9 +52,6 @@ tmap <C-t><C-t> <C-W>N
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 
-" vim-choosewin shortcut
-nmap - <Plug>(choosewin)
-
 " netrw shorcut
 nnoremap <silent> <leader>e :Explore<CR>
 augroup vimrc_netrw
@@ -188,7 +185,6 @@ Plug 'tpope/vim-rails'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
-Plug 't9md/vim-choosewin'
 Plug 'mattn/vim-sonictemplate'
 Plug 'alvan/vim-closetag'
 Plug 'andymass/vim-matchup'
@@ -236,9 +232,6 @@ augroup vimrc_vim_gitgutter
   autocmd VimEnter,ColorScheme * highlight GitGutterChange guibg=NONE ctermbg=NONE guifg=#bbbb00 ctermfg=3
   autocmd VimEnter,ColorScheme * highlight GitGutterDelete guibg=NONE ctermbg=NONE guifg=#ff2222 ctermfg=1
 augroup END
-
-" vim-choosewin
-let g:choosewin_overlay_enable=1
 
 " netrw
 " ヘッダを非表示にする
