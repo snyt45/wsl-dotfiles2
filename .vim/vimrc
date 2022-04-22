@@ -185,6 +185,7 @@ Plug 'tpope/vim-rails'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
+Plug 'unblevable/quick-scope'
 Plug 'mattn/vim-sonictemplate'
 Plug 'alvan/vim-closetag'
 Plug 'andymass/vim-matchup'
