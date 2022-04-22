@@ -8,10 +8,6 @@ let mapleader = "\<Space>"
 nnoremap H ^
 nnoremap L $
 
-" 段落の移動
-nnoremap <C-j> 5j
-nnoremap <C-k> 5k
-
 " タブ
 nmap <C-l> :tabnext<CR>
 nmap <C-h> :tabprevious<CR>
@@ -104,6 +100,10 @@ inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
+" vim-edgemotion shortcut
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
+
 " ----------------------------------------------------------------------------
 " SETTINGS
 " ----------------------------------------------------------------------------
@@ -185,6 +185,7 @@ Plug 'tpope/vim-rails'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
+Plug 'haya14busa/vim-edgemotion'
 Plug 'unblevable/quick-scope'
 Plug 'mattn/vim-sonictemplate'
 Plug 'alvan/vim-closetag'
