@@ -190,6 +190,7 @@ Plug 'unblevable/quick-scope'
 Plug 'mattn/vim-sonictemplate'
 Plug 'alvan/vim-closetag'
 Plug 'andymass/vim-matchup'
+Plug 'AndrewRadev/linediff.vim'
 Plug 'skanehira/translate.vim'
 Plug 'vim-jp/vimdoc-ja'
 
