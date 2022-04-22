@@ -184,6 +184,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'tpope/vim-rails'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
 Plug 'haya14busa/vim-edgemotion'

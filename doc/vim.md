@@ -67,6 +67,10 @@
 - `:MarkdownPreview`
   - ブラウザでマークダウンのプレビュー表示
 
+## vim-table-mode
+- `:TableModeToggle`
+  - テーブルモードを切り替える(`SPC + tm`)
+
 ## vim-lsp
 
 - `:LspInstallServer`
