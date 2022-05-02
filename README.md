@@ -120,7 +120,7 @@ vi
 
 OS: Windows11
 
-Microsoft Store経由でインストールしたUbuntu(20.04)のセットアップが完了している状態を想定しています。
+Microsoft Store経由でインストールしたUbuntu(22.04)のセットアップが完了している状態を想定しています。
 
 ### 追加手順
 
@@ -144,13 +144,24 @@ $script = (New-Object Net.WebClient).DownloadString('https://raw.githubuserconte
 Invoke-Expression("&{$script} -DistroName '[DistroName]' -InstallLocation 'C:\Users\snyt45\AppData\Local\Packages\[DistroName]' -InstallTarFile 'C:\temp\ubuntu-unminimize.tar'")
 ```
 
-### セットアップ
+### 追加したLinux ディストリビューションのセットアップ
 
+一律下記を実行する。
 `sudo apt install bash-completion`は必ず行うこと。
-bashではTAB または ESC連打で補完機能が働くが、何もない状態でも補完機能が働いてしまいフリーズする。
-bash-completionを入れると、何も入力されていないときは補完機能が働かないようになってくれる。
 
-上記以外は、適宜Ubuntu上でセットアップを行う。
+- `sudo apt install bash-completion`
+  - bashではTAB または ESC連打で補完機能が働くが、何もない状態でも補完機能が働いてしまいフリーズする。
+bash-completionを入れると、何も入力されていないときは補完機能が働かないようになってくれる。
+- `sudo apt update && sudo apt upgrade`
+- `sudo apt install git`
+- `sudo apt install curl`
+- `sudo apt-get install wget`
+  - `code .`の依存関係
+- `sudo apt install vim`
+
+
+上記が終わったら、`Ubuntu(Microsoft Store)のセットアップ`と同じやり方でセットアップする。
+※`rbenv`は除く
 
 ### 追加したLinux ディストリビューションを登録解除
 
