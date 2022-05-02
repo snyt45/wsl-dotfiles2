@@ -146,7 +146,7 @@ Invoke-Expression("&{$script} -DistroName '[DistroName]' -InstallLocation 'C:\Us
 
 ### 追加したLinux ディストリビューションのセットアップ
 
-一律下記を実行する。
+1. 一律下記を実行する。
 `sudo apt install bash-completion`は必ず行うこと。
 
 - `sudo apt install bash-completion`
@@ -160,8 +160,22 @@ bash-completionを入れると、何も入力されていないときは補完�
 - `sudo apt install vim`
 
 
-上記が終わったら、`Ubuntu(Microsoft Store)のセットアップ`と同じやり方でセットアップする。
-※`rbenv`は除く
+2. `Ubuntu(Microsoft Store)のセットアップ`と同じやり方でセットアップする。 ※`rbenv`は除く
+
+3. 最後に、追加したLinux ディストリビューションだけstarshipの設定を追加する。
+
+※プロンプトに[Docker]が表示されてしまうの防ぐため
+
+```
+mkdir ~/.config
+vi ~/.config/starship.toml
+```
+
+設定
+```
+[container]
+disabled = true
+```
 
 ### 追加したLinux ディストリビューションを登録解除
 
