@@ -7,14 +7,13 @@ snyt45のdotfilesです。
 
 OS: Windows11
 
-Microsoft Store経由でインストールしたUbuntu(20.04)のセットアップを行います。
-※`wsl --install -d Ubuntu`してUbuntuがある状態を想定しています。
+Microsoft Store経由でインストールしたUbuntu(22.04)のセットアップを行います。
 
 次のツール・ライブラリに依存します。
 
 - Windows Terminal
 - Docker Desktop
-- Git Credential Manager
+- Git Credential Manager ※最新のGit Bashに付属している
   - Gitの認証情報ヘルパー
 - Nerd Font
 	- starshipのアイコン表示に必要
@@ -44,42 +43,24 @@ curl https://get.volta.sh | bash
 volta install node@14
 ```
 
-##### Vim
-
-最新バージョンのインストール
-
-```
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update
-sudo apt install vim
-```
-
 ##### fzf
 
 ```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# 全て「No」で進める
-~/.fzf/install
+sudo apt install fzf
 ```
 
 ##### ripgrep
 
 ```
-sudo apt download ripgrep
-sudo dpkg --force-overwrite -i ripgrep*.deb
+sudo apt install ripgrep
 ```
 
 ##### bat
 
-`sudo dpkg --force-overwrite -i bat*.deb`実行時にUbuntu20.04の問題でripgrepとbatのファイルがコンフリクトする。
-
-`sudo apt --fix-broken install`すると解消する。
-
 ```
-sudo apt download bat
-sudo dpkg --force-overwrite -i bat*.deb
+sudo apt install bat
 
-# PATHを通す
+# batで呼び出せるように設定
 mkdir -p ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 ```
@@ -90,17 +71,10 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 ```
 
-##### Hugo ※任意
-
-```
-wget https://github.com/gohugoio/hugo/releases/download/v0.91.2/hugo_extended_0.91.2_Linux-64bit.deb
-sudo apt install ./hugo_extended_0.91.2_Linux-64bit.deb
-```
-
 ##### zoxide
 
 ```
-curl -sS https://webinstall.dev/zoxide | bash
+sudo apt install zoxide
 ```
 
 #### rbenv
@@ -116,8 +90,8 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
 
 # install ruby
-rbenv install 2.6.5
-rbenv global 2.6.5
+rbenv install 3.1.0
+rbenv global 3.1.0
 ```
 
 #### シンボリックリンク配置
