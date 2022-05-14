@@ -96,11 +96,11 @@
 ## bracey.vim
 
 - `:Bracey`
-  - サーバー起動。ステータス行にポート番号が表示される。`localhost:{port}`でアクセス。
+  - サーバー起動。ブラウザでライブプレビュー画面が開く。
 - `:BraceyReload`
   - サーバー再起動
 - `:BraceyStop`
-  - サーバー停止。不具合だと思うがプロセスは残りっぱなしになる。`ps -e | grep node`でプロセス番号取得して、`kill -9 {process_number}`でキルする。
+  - サーバー停止。不具合だと思うがプロセスは残りっぱなしになる。`pgrep node | xargs kill -9`でプロセスをキルする。
 
 ## vim-sonictemplate
 
