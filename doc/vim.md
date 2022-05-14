@@ -93,6 +93,15 @@
 - `gf`
   - カーソル下の文字列から対応するファイルを開く
 
+## bracey.vim
+
+- `:Bracey`
+  - サーバー起動。ステータス行にポート番号が表示される。`localhost:{port}`でアクセス。
+- `:BraceyReload`
+  - サーバー再起動
+- `:BraceyStop`
+  - サーバー停止。不具合だと思うがプロセスは残りっぱなしになる。`ps -e | grep node`でプロセス番号取得して、`kill -9 {process_number}`でキルする。
+
 ## vim-sonictemplate
 
 - `:Template <Tab>`
