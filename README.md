@@ -100,6 +100,19 @@ rbenv global 3.1.0
 sh ~/.dotfiles/setup/symlinks.sh
 ```
 
+#### Bashの設定
+
+自動生成されるbashrcの設定は変えずに設定を追加するために、bashrcにbashrc_localを読み込む設定を追加
+
+```
+cat <<SETTING >> ~/.bashrc
+# include .bashrc_local if it exists
+if [ -f "$HOME/.bashrc_local" ]; then
+    . "$HOME/.bashrc_local"
+fi
+SETTING
+```
+
 #### Vimのセットアップ
 
 vim-plugのセットアップ

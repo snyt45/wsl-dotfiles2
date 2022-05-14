@@ -39,7 +39,7 @@ endfunction
 nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
 
 " ログインシェルとしてbashを開く
-nnoremap sh :term ++close bash -l<CR>
+nnoremap sh :term ++close bash<CR>
 
 " Terminal Normalモード/Jobモード トグル
 tmap <C-t><C-t> <C-W>N

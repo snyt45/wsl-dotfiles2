@@ -1,7 +1,7 @@
 #*******************************************************************************
 #
 # .bash_profile
-#   ログイン時に一度だけ読み込まれる
+#   ログインシェルとして起動時に一度だけ読み込まれる
 #
 #*******************************************************************************
 
@@ -15,7 +15,7 @@ if [ -f "$HOME/.bashrc" ]; then
     . "$HOME/.bashrc"
 fi
 
-# include .bashrc_custom if it exists
-if [ -f "$HOME/.bashrc_custom" ]; then
-    . "$HOME/.bashrc_custom"
+# include .bashrc_local if it exists
+if [ -f "$HOME/.bashrc_local" ]; then
+    . "$HOME/.bashrc_local"
 fi

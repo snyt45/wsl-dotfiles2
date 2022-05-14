@@ -21,6 +21,6 @@ ln -snfv ~/.dotfiles/.vim/vimrc ~/.vim/
 ###
 
 ln -snfv ~/.dotfiles/.bash_profile ~/
-ln -snfv ~/.dotfiles/.bashrc_custom ~/
+ln -snfv ~/.dotfiles/.bashrc_local ~/
 
 echo "Done."
