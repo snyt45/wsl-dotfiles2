@@ -93,11 +93,25 @@ nnoremap <silent> gps :Git push<CR>
 nnoremap <silent> gpl :Git pull<CR>
 
 " vim-lsp shortcut
-nmap K :LspHover<CR>
+function! s:on_lsp_buffer_enabled() abort
+  nmap <buffer> <leader>ld <plug>(lsp-definition)
+  nmap <buffer> <leader>ldd <plug>(lsp-document-diagnostics)
+  nmap <buffer> <leader>lf <plug>(lsp-document-format)
+  nmap <buffer> <leader>lh <plug>(lsp-hover)
+  nmap <buffer> <leader>lr <plug>(lsp-rename)
+
+  " asyncomplete.vim
+  let g:asyncomplete_popup_delay = 100
+endfunction
+
+augroup vimrc_vim_lsp
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " asyncomplete.vim shortcut
-inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " vim-edgemotion shortcut
@@ -252,12 +266,6 @@ let g:netrw_winsize=80
 
 " fzf.vim
 let g:fzf_preview_window = ['down:60%', 'ctrl-/']
-
-" vim-lsp
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_hover_ui = 'float'
-let g:asyncomplete_auto_popup = 1
 
 " bracey.vim
 let g:bracey_browser_command = 'cmd.exe /c start'
