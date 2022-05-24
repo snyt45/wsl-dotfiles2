@@ -73,14 +73,20 @@
 
 ## vim-lsp
 
+- `ld`
+  - メソッドの定義箇所に移動(`:LspDefinition`)
+- `ldd`
+  - 詳細なエラー情報を別ウィンドウで表示(`:LspDocumentDiagnostics`)
+- `lf`
+  - ドキュメント整形(`:LspDocumentFormat`)
+- `lh`
+  - カーソル下のシンボルの情報をホバー表示(`:LspHover`)
+- `lr`
+  - カーソル下のシンボルのリネーム(`:LspRename`)
 - `:LspInstallServer`
   - lspServerをインストール
 - `:LspManageServers`
   - LSPの管理画面を開く。 `i`でインストール。`x`でアンインストール、`b`でブラウザで開く、`?`で補足情報を表示
-- `:LspDocumentDiagnostics`
-  - 詳細なエラー情報を別ウィンドウで表示
-- `K`
-  - カーソル下のシンボルの情報をホバー表示(`:LspHover`)
 
 ## translate.vim
 

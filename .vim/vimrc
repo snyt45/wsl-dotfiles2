@@ -94,11 +94,11 @@ nnoremap <silent> gpl :Git pull<CR>
 
 " vim-lsp shortcut
 function! s:on_lsp_buffer_enabled() abort
-  nmap <buffer> <leader>ld <plug>(lsp-definition)
-  nmap <buffer> <leader>ldd <plug>(lsp-document-diagnostics)
-  nmap <buffer> <leader>lf <plug>(lsp-document-format)
-  nmap <buffer> <leader>lh <plug>(lsp-hover)
-  nmap <buffer> <leader>lr <plug>(lsp-rename)
+  nmap <buffer> ld <plug>(lsp-definition)
+  nmap <buffer> ldd <plug>(lsp-document-diagnostics)
+  nmap <buffer> lf <plug>(lsp-document-format)
+  nmap <buffer> lh <plug>(lsp-hover)
+  nmap <buffer> lr <plug>(lsp-rename)
 
   " asyncomplete.vim
   let g:asyncomplete_popup_delay = 100
