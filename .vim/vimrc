@@ -4,6 +4,9 @@
 
 let mapleader = "\<Space>"
 
+" ヤンクレジスタを使って貼り付け
+noremap PP "0p
+
 " 行頭、行末の移動
 nnoremap H ^
 nnoremap L $
