@@ -83,10 +83,12 @@ nnoremap <silent> ga :Git add -A<CR>
 nnoremap <silent> gc :Git commit<CR>
 nnoremap <silent> gb :Git blame<CR>
 nnoremap <silent> gd :Git diff<CR>
-nnoremap <silent> gl :Git log<CR>
-nnoremap <silent> gll :Git log --pretty='format:%h %cs %s [%an]' %<CR>
 nnoremap <silent> gps :Git push<CR>
 nnoremap <silent> gpl :Git pull<CR>
+
+" gv.vim
+nnoremap <silent> gl :GV<CR>
+nnoremap <silent> gll :GV!<CR>
 
 " vim-lsp shortcut
 function! s:on_lsp_buffer_enabled() abort
@@ -185,6 +187,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'hotwatermorning/auto-git-diff'
 Plug 'itchyny/lightline.vim'
 Plug 'prabirshrestha/asyncomplete.vim'

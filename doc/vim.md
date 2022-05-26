@@ -48,14 +48,19 @@
     - blame(`:Git blame`)
 - `gd`
     - 一時バッファでdiff表示(`:Git diff`)
-- `gl`
-    - 一時バッファでlog表示(`:Git log`)
-- `gll`
-    - 一時バッファでカレントファイルのlog表示(`:Git log --pretty='format:%h %cs %s [%an]' %`)
 - `gps`
     - Push(`:Git push`)
 - `gpl`
     - Pull(`:Git pull`)
+
+## gv.vim
+
+- `gl`
+  - コミットブラウザを開く(`:GV`)
+- `gll`
+  - カレントファイルのコミットブラウザを開く(`:GV!`)
+- `q`
+  - コミットブラウザを閉じる
 
 ## vim-gitgutter
 - `]c`
