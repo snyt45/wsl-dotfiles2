@@ -86,6 +86,17 @@ nnoremap <silent> gd :Git diff<CR>
 nnoremap <silent> gps :Git push<CR>
 nnoremap <silent> gpl :Git pull<CR>
 
+" Replace Browse cmd {{{
+" Browse command is used by fugitive instead of netrw, so we can get rid of
+" those Press <cr> to continue messages.
+" ref: https://github.com/leafgarland/vimfiles/blob/master/.vimrc#L1007-L1024
+function! Browse(url)
+  call system('cmd.exe /c start ' . a:url)
+endfunction
+command! -nargs=1 Browse :call Browse(<q-args>)
+nnoremap gx :Browse <C-R><C-f><CR>
+"}}}
+
 " gv.vim
 nnoremap <silent> gl :GV<CR>
 nnoremap <silent> gll :GV!<CR>
@@ -187,6 +198,7 @@ Plug 'pechorin/any-jump.vim'
 Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 Plug 'hotwatermorning/auto-git-diff'
 Plug 'itchyny/lightline.vim'
