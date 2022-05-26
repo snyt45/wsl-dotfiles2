@@ -62,28 +62,20 @@ augroup vimrc_netrw
 augroup END
 
 " fzf.vim shortcut
-" git管理されていれば:GFiles、そうでなければ:Filesを実行する
-function! FzfOmniFiles()
-  if v:shell_error
-    :Files
-  else
-    let is_git_root = system('git rev-parse --show-toplevel')
-    let current_dir = system('pwd')
-    " Gitリポジトリでルート以外にいるときはカレントディレクトリ配下を絞り込む
-    if current_dir == is_git_root
-      :GFiles
-    else
-      :Files
-    endif
-  endif
-endfunction
 nnoremap <silent> <leader>r :History:<CR>
-nnoremap <silent> <leader>p :call FzfOmniFiles()<CR>
+nnoremap <silent> <leader>p :GFiles<CR>
 nnoremap <silent> <leader>g :GFiles?<CR>
 nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>h :History<CR>
+
+" command :Rg override
+" 隠しファイルも検索対象に含める
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg -L --hidden --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 " vim-fugitive shortcut
 nnoremap <silent> gs :Git<CR>
@@ -189,6 +181,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pechorin/any-jump.vim'
+Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'hotwatermorning/auto-git-diff'
@@ -265,8 +258,6 @@ augroup END
 let g:netrw_banner=0
 " プレビューウィンドウを垂直分割で表示する
 let g:netrw_preview=1
-" ディレクトリを移動する度にカレントディレクトリを設定
-let g:netrw_keepdir=0
 " 垂直分割時に分割ウィンドウを右に開く
 let g:netrw_altv=1
 let g:netrw_winsize=80

@@ -4,7 +4,7 @@
 - `SPC + r`
   - コマンド履歴検索(`:History:`)
 - `SPC + p`
-  - ファイル検索(`:GFiles` or `:Files`)
+  - ファイル検索(`:GFiles`)
 - `SPC + g`
   - git statusされているファイル検索(`:GFiles?`)
 - `SPC + f`
@@ -153,10 +153,6 @@
   - netrwの設定を確認する
 - `b:netrw_curdir`
   - netrwのブラウジングディレクトリを確認できる
-- カレントディレクトリ配下のファイルを検索
-  - `g:netrw_keepdir=0`に依存
-	- ディレクトリを開いた状態にするとVim上でカレントディレクトリになる
-	- カレントディレクトリが変わった状態で`:Rg`、`:Files`を呼び出すことでカレントディレクトリ配下を対象に検索できる
 
 ## grep
 - いわゆる外部grep(`ripgrep`があるときは`ripgrep`を使う)
