@@ -84,6 +84,7 @@ nnoremap <silent> gc :Git commit<CR>
 nnoremap <silent> gb :Git blame<CR>
 nnoremap <silent> gd :Git diff<CR>
 nnoremap <silent> gl :Git log<CR>
+nnoremap <silent> gll :Git log --pretty='format:%h %cs %s [%an]' %<CR>
 nnoremap <silent> gps :Git push<CR>
 nnoremap <silent> gpl :Git pull<CR>
 

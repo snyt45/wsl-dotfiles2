@@ -50,6 +50,8 @@
     - 一時バッファでdiff表示(`:Git diff`)
 - `gl`
     - 一時バッファでlog表示(`:Git log`)
+- `gll`
+    - 一時バッファでカレントファイルのlog表示(`:Git log --pretty='format:%h %cs %s [%an]' %`)
 - `gps`
     - Push(`:Git push`)
 - `gpl`
