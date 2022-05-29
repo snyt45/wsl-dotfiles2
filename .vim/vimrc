@@ -11,10 +11,16 @@ noremap PP "0p
 nnoremap H ^
 nnoremap L $
 
-" タブ
-nmap <C-l> :tabnext<CR>
-nmap <C-h> :tabprevious<CR>
+" タブ移動
+nmap tn :tabnext<CR>
+nmap tp :tabprevious<CR>
 nmap <leader>t :tabnew<CR>
+nmap <S-Right> :+tabmove<CR>
+nmap <S-Left> :-tabmove<CR>
+tnoremap tn <C-w>:tabnext<CR>
+tnoremap tp <C-w>:tabprevious<CR>
+tnoremap <S-Right> <C-w>:+tabmove<CR>
+tnoremap <S-Left> <C-w>:-tabmove<CR>
 
 " highlight off
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
@@ -41,8 +47,8 @@ function! ToggleQuickfix()
 endfunction
 nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
 
-" ログインシェルとしてbashを開く
-nnoremap sh :term ++close bash<CR>
+" カレントウィンドウでbashを開く
+nnoremap sh :term ++close ++curwin bash<CR>
 
 " Terminal Normalモード/Jobモード トグル
 tmap <C-t><C-t> <C-W>N
@@ -69,6 +75,7 @@ nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>h :History<CR>
+nnoremap <silent> <leader>w :Windows<CR>
 
 " command :Rg override
 " 隠しファイルも検索対象に含める
