@@ -11,17 +11,6 @@ noremap PP "0p
 nnoremap H ^
 nnoremap L $
 
-" タブ移動
-nmap tn :tabnext<CR>
-nmap tp :tabprevious<CR>
-nmap <leader>t :tabnew<CR>
-nmap <S-Right> :+tabmove<CR>
-nmap <S-Left> :-tabmove<CR>
-tnoremap tn <C-w>:tabnext<CR>
-tnoremap tp <C-w>:tabprevious<CR>
-tnoremap <S-Right> <C-w>:+tabmove<CR>
-tnoremap <S-Left> <C-w>:-tabmove<CR>
-
 " highlight off
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 
