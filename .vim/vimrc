@@ -11,6 +11,11 @@ noremap PP "0p
 nnoremap H ^
 nnoremap L $
 
+" タブ
+nmap te :<C-u>tabedit<CR>
+nmap <S-Tab> :<C-u>tabprev<CR>
+nmap <Tab> :<C-u>tabnext<CR>
+
 " ウィンドウ分割を楽にする設定
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
@@ -53,9 +58,6 @@ function! ToggleQuickfix()
   endif
 endfunction
 nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
-
-" カレントウィンドウでbashを開く
-nnoremap tt :term ++close ++curwin bash<CR>
 
 " Terminal Normalモード/Jobモード トグル
 tmap <C-t><C-t> <C-W>N
