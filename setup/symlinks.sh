@@ -23,4 +23,10 @@ ln -snfv ~/.dotfiles/.vim/vimrc ~/.vim/
 ln -snfv ~/.dotfiles/.bash_profile ~/
 ln -snfv ~/.dotfiles/.bashrc_local ~/
 
+###
+# tmux
+###
+
+ln -snfv ~/.dotfiles/.tmux.conf ~/
+
 echo "Done."

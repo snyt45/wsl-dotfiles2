@@ -43,6 +43,12 @@ curl https://get.volta.sh | bash
 volta install node@14
 ```
 
+##### tmux
+
+```
+sudo apt install tmux
+```
+
 ##### fzf
 
 ```
