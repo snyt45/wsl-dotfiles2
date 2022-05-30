@@ -29,4 +29,11 @@ ln -snfv ~/.dotfiles/.bashrc_local ~/
 
 ln -snfv ~/.dotfiles/.tmux.conf ~/
 
+###
+# bin
+###
+
+mkdir -p ~/bin
+ln -snfv ~/.dotfiles/bin/ide ~/bin/
+
 echo "Done."
