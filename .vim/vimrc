@@ -11,6 +11,16 @@ noremap PP "0p
 nnoremap H ^
 nnoremap L $
 
+" ウィンドウ分割
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" ウィンドウ移動
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+
 " highlight off
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR><Esc>
 
@@ -37,7 +47,7 @@ endfunction
 nnoremap <script> <silent> <Space>q :call ToggleQuickfix()<CR>
 
 " カレントウィンドウでbashを開く
-nnoremap sh :term ++close ++curwin bash<CR>
+nnoremap tt :term ++close ++curwin bash<CR>
 
 " Terminal Normalモード/Jobモード トグル
 tmap <C-t><C-t> <C-W>N
