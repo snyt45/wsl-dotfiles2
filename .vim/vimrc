@@ -15,6 +15,8 @@ nnoremap L $
 nmap te :<C-u>tabedit<CR>
 nmap <S-Tab> :<C-u>tabprev<CR>
 nmap <Tab> :<C-u>tabnext<CR>
+nmap tn <C-w>:+tabmove<CR>
+nmap tp <C-w>:-tabmove<CR>
 
 " ウィンドウ分割を楽にする設定
 nnoremap ss :<C-u>sp<CR>
