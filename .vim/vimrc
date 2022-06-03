@@ -13,6 +13,7 @@ nnoremap L $
 
 " タブ
 nmap te :<C-u>tabedit<CR>
+nmap tt :<C-u>tab split<CR>
 nmap <S-Tab> :<C-u>tabprev<CR>
 nmap <Tab> :<C-u>tabnext<CR>
 nmap tn <C-w>:+tabmove<CR>
