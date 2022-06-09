@@ -293,6 +293,19 @@ augroup vimrc_vim_gitgutter
   autocmd VimEnter,ColorScheme * highlight GitGutterDelete guibg=NONE ctermbg=NONE guifg=#ff2222 ctermfg=1
 augroup END
 
+" lightline.vim
+set showtabline=2
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ 'tabline': {
+      \   'left': [['tabs']],
+      \   'right': [['gitbranch']],
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
 " netrw
 " ヘッダを非表示にする
 let g:netrw_banner=0
