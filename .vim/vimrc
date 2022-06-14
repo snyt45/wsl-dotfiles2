@@ -239,6 +239,7 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install'  }
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'mattn/vim-maketable'
 Plug 'morhetz/gruvbox'
 Plug 'rhysd/accelerated-jk'
 Plug 'haya14busa/vim-edgemotion'

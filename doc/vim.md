@@ -83,6 +83,14 @@
 - `:TableModeToggle`
   - テーブルモードを切り替える(`SPC + tm`)
 
+## vim-marktable
+- `:MakeTable`
+  - 選択した行をテーブル表記にする
+- `:MakeTable!`
+  - 選択した行の1行目をヘッダーにしてテーブル表記にする
+- `:UnmakeTable`
+  - テーブル表記を解除する
+
 ## vim-lsp
 
 - `ld`
