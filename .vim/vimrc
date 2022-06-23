@@ -174,7 +174,7 @@ set shiftwidth=2
 
 " コードの折りたたみ
 set foldmethod=indent
-set foldlevel=8
+set foldlevel=100
 
 " https://qiita.com/Linda_pp/items/9e0c94eb82b18071db34
 if has('vim_starting')
